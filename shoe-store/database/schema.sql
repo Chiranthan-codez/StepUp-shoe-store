@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS orders (
   payment_method VARCHAR(50) DEFAULT 'card',
   payment_status VARCHAR(50) DEFAULT 'pending',
   order_status VARCHAR(50) DEFAULT 'placed',
-  total_amount DECIMAL(10,2) NOT NULL,
+  total DECIMAL(10,2) NOT NULL,
   shipping_address TEXT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
