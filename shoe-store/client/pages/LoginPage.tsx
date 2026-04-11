@@ -13,7 +13,7 @@ import {
   User,
   Phone,
   Sparkles,
-  ShoppingBag,
+ // ShoppingBag,
 } from "lucide-react";
 import { useAuth } from "@/lib/AuthContext";
 import { apiUrl } from "@/lib/api";
@@ -160,7 +160,7 @@ export default function LoginPage() {
                 boxShadow: "0 8px 32px rgba(208, 2, 27, 0.4)",
               }}
             >
-              <ShoppingBag className="w-6 h-6 text-white" />
+              {/*<ShoppingBag className="w-6 h-6 text-white" />*/}
             </div>
             <h1
               className="text-4xl font-black tracking-tight"

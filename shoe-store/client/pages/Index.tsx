@@ -1068,31 +1068,31 @@ export default function Index() {
         )}
       </nav>
 
-      {/* Tradewood Style Light Hero Section */}
-      <section className="relative overflow-hidden min-h-[90vh] bg-white flex items-center font-sans tracking-tight pt-16">
+      {/* Tradewood Style Hero Section */}
+      <section className="relative overflow-hidden min-h-[90vh] bg-white dark:bg-background flex items-center font-sans tracking-tight pt-16 transition-colors duration-300">
         {/* Decorative Green Blobs */}
-        <div className="absolute left-10 md:left-20 top-20 w-48 h-48 bg-[#f1f8e9] rounded-full blur-3xl opacity-80 pointer-events-none"></div>
-        <div className="absolute left-32 md:left-48 top-32 w-56 h-56 bg-[#eaddcf] rounded-full blur-[60px] opacity-40 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-gray-50 to-transparent pointer-events-none"></div>
+        <div className="absolute left-10 md:left-20 top-20 w-48 h-48 bg-[#f1f8e9] dark:bg-[#1f2e1a] rounded-full blur-3xl opacity-80 pointer-events-none transition-colors duration-300"></div>
+        <div className="absolute left-32 md:left-48 top-32 w-56 h-56 bg-[#eaddcf] dark:bg-[#2d241c] rounded-full blur-[60px] opacity-40 pointer-events-none transition-colors duration-300"></div>
+        <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-gray-50 dark:from-background/50 to-transparent pointer-events-none transition-colors duration-300"></div>
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col lg:flex-row items-center justify-between gap-12">
           
           {/* Left Text Side */}
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-20">
-            <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] leading-[1.05] font-black text-black">
+            <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] leading-[1.05] font-black text-black dark:text-white transition-colors duration-300">
               Best In Style<br />
               Collection<br />
               For You
             </h1>
-            <div className="w-full max-w-sm mt-4 lg:mt-8 border-t border-gray-200">
-               <p className="text-gray-600 text-sm md:text-base pt-6 leading-relaxed">
+            <div className="w-full max-w-sm mt-4 lg:mt-8 border-t border-gray-200 dark:border-white/10 transition-colors duration-300">
+               <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base pt-6 leading-relaxed transition-colors duration-300">
                  We craft the, we wont say the best,<br />
                  But through 70 years of experience in the industry
                </p>
             </div>
             
             <Button
-              className="bg-black hover:bg-gray-800 text-white rounded-[2rem] px-8 py-6 text-sm font-semibold tracking-wide shadow-xl transition-transform hover:scale-105 duration-300 mt-2"
+              className="bg-black hover:bg-gray-800 text-white dark:bg-white dark:text-black dark:hover:bg-gray-200 rounded-[2rem] px-8 py-6 text-sm font-semibold tracking-wide shadow-xl transition-all hover:scale-105 duration-300 mt-2"
               onClick={() => setCurrentPage("categories")}
             >
               Pre-order Now
@@ -1100,38 +1100,38 @@ export default function Index() {
             
             {/* Bottom Stat */}
             <div className="mt-12 lg:mt-24 flex flex-col border-l-4 border-[#a4e12e] pl-4 self-center lg:self-center">
-              <span className="text-xs text-gray-500 font-medium uppercase tracking-wider">Toe Comfort</span>
-              <span className="text-xl font-bold text-black mt-1">Fast Running</span>
+              <span className="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wider transition-colors duration-300">Toe Comfort</span>
+              <span className="text-xl font-bold text-black dark:text-white mt-1 transition-colors duration-300">Fast Running</span>
             </div>
           </div>
 
           {/* Right Shoe Side */}
           <div className="w-full lg:w-1/2 relative mt-20 lg:mt-0 flex justify-center items-center min-h-[400px]">
             {/* Dashed Circle Backing */}
-            <div className="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full border border-dashed border-gray-400 rotate-45 pointer-events-none">
-               <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border border-gray-400 rounded-full"></div>
-               <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-4 h-4 bg-white border border-gray-400 rounded-full"></div>
-               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border border-gray-400 rounded-full"></div>
-               <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 w-4 h-4 bg-white border border-gray-400 rounded-full"></div>
+            <div className="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full border border-dashed border-gray-400 dark:border-white/20 rotate-45 pointer-events-none transition-colors duration-300">
+               <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white dark:bg-background border border-gray-400 dark:border-white/20 rounded-full transition-colors duration-300"></div>
+               <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-4 h-4 bg-white dark:bg-background border border-gray-400 dark:border-white/20 rounded-full transition-colors duration-300"></div>
+               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white dark:bg-background border border-gray-400 dark:border-white/20 rounded-full transition-colors duration-300"></div>
+               <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 w-4 h-4 bg-white dark:bg-background border border-gray-400 dark:border-white/20 rounded-full transition-colors duration-300"></div>
             </div>
 
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F8b39261676d1488287ee26a617ce70a7%2F8acfe831d390479c9fa8ca92e24c4b6e"
+              src="https://w7.pngwing.com/pngs/323/773/png-transparent-sneakers-basketball-shoe-sportswear-nike-shoe-outdoor-shoe-running-sneakers.png"
               alt="Premium Running Shoe"
-              className="relative z-10 w-[110%] max-w-[600px] object-contain drop-shadow-[-20px_30px_20px_rgba(0,0,0,0.25)] transform -rotate-[25deg] hover:rotate-[0deg] hover:scale-105 transition-all duration-700 ease-out cursor-pointer"
+              className="relative z-10 w-[110%] max-w-[600px] object-contain drop-shadow-[0_45px_30px_rgba(0,0,0,0.4)] dark:drop-shadow-[0_45px_30px_rgba(255,255,255,0.05)] transform -rotate-[25deg] hover:rotate-[0deg] hover:scale-105 transition-all duration-700 ease-out cursor-pointer"
               onClick={() => setCurrentPage("categories")}
             />
             
             {/* Flash/Charge icon background elements */}
-            <div className="absolute right-4 bottom-32 opacity-10 pointer-events-none text-7xl rotate-12 flex gap-1">
+            <div className="absolute right-4 bottom-32 opacity-10 dark:opacity-[0.03] pointer-events-none text-7xl rotate-12 flex gap-1 transition-opacity duration-300">
               <span>⚡</span><span>⚡</span>
             </div>
 
             {/* Right Bottom Stat */}
             <div className="absolute -bottom-4 right-8 lg:right-20 flex flex-col items-end z-20">
-               <span className="text-xs text-gray-500 font-medium tracking-wider">Daily Workout</span>
+               <span className="text-xs text-gray-500 dark:text-gray-400 font-medium tracking-wider transition-colors duration-300">Daily Workout</span>
                <div className="flex items-center gap-3 mt-1">
-                 <span className="text-3xl font-bold text-black">58%</span>
+                 <span className="text-3xl font-bold text-black dark:text-white transition-colors duration-300">58%</span>
                  <div className="w-3 h-3 rounded-full bg-[#a4e12e] shadow-[0_0_10px_rgba(164,225,46,0.8)]"></div>
                </div>
             </div>
