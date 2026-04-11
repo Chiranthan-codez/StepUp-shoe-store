@@ -153,7 +153,7 @@ export default function LoginPage() {
         {/* Brand header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-3 mb-4">
-            <div
+            {/*<div
               className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg"
               style={{
                 background: "linear-gradient(135deg, rgb(208,2,27), rgb(160,0,20))",
@@ -375,7 +375,7 @@ export default function LoginPage() {
                     <button
                       type="button"
                       className="text-xs hover:underline"
-                      style={{ color: "rgb(255, 120, 100)" }}
+                      style={{ color: "rgba(40, 40, 40, 1)" }}
                     >
                       Forgot password?
                     </button>
