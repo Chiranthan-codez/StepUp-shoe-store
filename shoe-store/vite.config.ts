@@ -1,9 +1,11 @@
 import { defineConfig, Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import dotenv from "dotenv";
 import { createServer } from "./server";
 
-// https://vitejs.dev/config/
+// Load .env variables for server-side code (Vite only auto-loads VITE_* for client)
+dotenv.config();
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
