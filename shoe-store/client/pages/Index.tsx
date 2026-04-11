@@ -1097,10 +1097,10 @@ export default function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-brand-50 dark:via-background dark:to-accent/20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-background dark:via-background dark:to-accent/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
+            <div className="space-y-8 flex flex-col items-center lg:items-start">
               <div className="space-y-4">
                 <Badge variant="secondary" className="w-fit animate-pulse">
                   New Collection 2024
@@ -1115,16 +1115,16 @@ export default function Index() {
                     </p>
                   </span>
                 </h1>
-                <p className="text-lg text-muted-foreground max-w-lg">
+                <p className="text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0">
                   Discover premium athletic footwear designed for comfort,
                   style, and peak performance. From running to lifestyle, find
                   your perfect pair.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="text-lg px-8 hover:scale-105 transition-transform duration-300"
+                  className="text-lg px-8 hover:scale-105 transition-transform duration-300 w-full sm:w-auto"
                   style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
                   onClick={() => setCurrentPage("categories")}
                 >
@@ -1133,13 +1133,13 @@ export default function Index() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg px-8 hover:scale-105 transition-transform duration-300"
+                  className="text-lg px-8 hover:scale-105 transition-transform duration-300 w-full sm:w-auto"
                   onClick={() => setCurrentPage("brands")}
                 >
                   Explore Brands
                 </Button>
               </div>
-              <div className="flex items-center gap-8 text-sm text-muted-foreground">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
                   <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                     <span className="text-primary font-semibold">✓</span>
@@ -1154,7 +1154,7 @@ export default function Index() {
                 </div>
               </div>
             </div>
-            <div className="relative group">
+            <div className="relative group max-w-md mx-auto lg:max-w-full w-full">
               <div className="aspect-square bg-gradient-to-br from-primary/5 to-brand-100/50 rounded-3xl p-8 relative overflow-hidden">
                 <img
                   src={heroShoes[currentHeroImage]}
@@ -1165,7 +1165,7 @@ export default function Index() {
                 <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-brand-300/30 rounded-full blur-2xl animate-pulse delay-1000"></div>
               </div>
               {/* Hero Image Selector */}
-              <div className="absolute -top-[588px] left-[223px] transform -translate-x-1/2 flex gap-2">
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
                 {heroShoes.map((_, index) => (
                   <button
                     key={index}
