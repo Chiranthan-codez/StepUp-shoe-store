@@ -1116,7 +1116,7 @@ export default function Index() {
             </div>
 
             <img
-              src="https://w7.pngwing.com/pngs/323/773/png-transparent-sneakers-basketball-shoe-sportswear-nike-shoe-outdoor-shoe-running-sneakers.png"
+              src="https://www.pngall.com/wp-content/uploads/2016/04/Running-Shoes-Transparent.png"
               alt="Premium Running Shoe"
               className="relative z-10 w-[110%] max-w-[600px] object-contain drop-shadow-[0_45px_30px_rgba(0,0,0,0.4)] dark:drop-shadow-[0_45px_30px_rgba(255,255,255,0.05)] transform -rotate-[25deg] hover:rotate-[0deg] hover:scale-105 transition-all duration-700 ease-out cursor-pointer"
               onClick={() => setCurrentPage("categories")}
