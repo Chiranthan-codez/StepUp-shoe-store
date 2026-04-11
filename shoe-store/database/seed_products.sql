@@ -6,9 +6,9 @@ INSERT INTO products (id, name, brand, price, original_price, category, rating, 
 (1, 'Air Max Revolution', 'Nike', 179.00, 199.00, 'Running', 4.8, 124, TRUE, 'https://sneakernews.com/wp-content/uploads/2014/02/air-yeezy-2-red-october-508214-660-01.jpeg'),
 (2, 'Urban Walker Pro', 'Nike Air Jordan', 139.00, NULL, 'Casual', 4.6, 89, FALSE, 'https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400&h=400&fit=crop&crop=center'),
 (3, 'Elite Performance', 'Puma', 199.00, 249.00, 'Training', 4.9, 156, TRUE, 'https://staticc.sportskeeda.com/editor/2023/03/5120d-16777600528430-1920.jpg?w=840'),
-(4, 'Classic Canvas', 'Adidas', 89.00, NULL, 'Lifestyle', 4.4, 67, FALSE, 'https://rarest.org/wp-content/uploads/2022/06/Adidas-x-Pharrell-x-Chanel-Human-Race-Trail-NMD.jpg')
-(5,'Speed Trainer X', 'Nike', 159.00, 189.00, 'Running', 'women', 4.7, 203, TRUE,'https://sneakernews.com/wp-content/uploads/2014/02/air-yeezy-2-red-october-508214-660-01.jpeg'),
-(6,'Street Style 90', 'Reebok', 119.00, NULL, 'Casual', 'unisex', 4.3, 45, FALSE,'https://sneakernews.com/wp-content/uploads/2014/02/air-yeezy-2-red-october-508214-660-01.jpeg') ON CONFLICT (id) DO NOTHING;
+(4, 'Classic Canvas', 'Adidas', 89.00, NULL, 'Lifestyle', 4.4, 67, FALSE, 'https://rarest.org/wp-content/uploads/2022/06/Adidas-x-Pharrell-x-Chanel-Human-Race-Trail-NMD.jpg'),
+(5,'Speed Trainer X', 'Nike', 159.00, 189.00, 'Running', 4.7, 203, TRUE,'https://sneakernews.com/wp-content/uploads/2014/02/air-yeezy-2-red-october-508214-660-01.jpeg'),
+(6,'Street Style 90', 'Reebok', 119.00, NULL, 'Casual', 4.3, 45, FALSE,'https://sneakernews.com/wp-content/uploads/2014/02/air-yeezy-2-red-october-508214-660-01.jpeg') ON CONFLICT (id) DO NOTHING;
 
 -- Men's collection
 INSERT INTO products (id, name, brand, price, original_price, category, rating, review_count, is_new, image_url) VALUES
