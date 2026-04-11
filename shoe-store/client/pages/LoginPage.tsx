@@ -159,9 +159,9 @@ export default function LoginPage() {
                 background: "linear-gradient(135deg, rgb(208,2,27), rgb(160,0,20))",
                 boxShadow: "0 8px 32px rgba(208, 2, 27, 0.4)",
               }}
-            >
-              {/*<ShoppingBag className="w-6 h-6 text-white" />*/}
-            </div>
+            >*/}
+              {/*<ShoppingBag className="w-6 h-6 text-white" />
+            </div>*/}
             <h1
               className="text-4xl font-black tracking-tight"
               style={{ color: "rgb(208,2,27)" }}
