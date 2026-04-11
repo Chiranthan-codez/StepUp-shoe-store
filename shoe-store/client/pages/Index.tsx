@@ -107,7 +107,7 @@ const featuredProducts = [
 const categories = [
   {
     name: "Running",
-    icon: "🏃",
+    //icon: "👟",
     description: "Performance running shoes",
     image:
       "https://static.nike.com/a/images/t_PDP_864_v1,f_auto,q_auto:eco/31f2acf8-1aad-4267-b7d3-74bef760845d/revolution-6-womens-road-running-shoes-6QLh9B.png",
@@ -120,21 +120,21 @@ const categories = [
   },
   {
     name: "Casual",
-    icon: "👟",
+    //icon: "👟",
     description: "Everyday comfort",
     image:
       "https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "Training",
-    icon: "💪",
+    //icon: "💪",
     description: "Gym & fitness",
     image:
       "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "Lifestyle",
-    icon: "✨",
+    //icon: "✨",
     description: "Fashion forward",
     image:
       "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=300&h=200&fit=crop&crop=center",
@@ -1208,9 +1208,9 @@ export default function Index() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent group-hover:from-black/30 transition-all duration-300"></div>
-                  <div className="absolute top-4 left-4 text-3xl group-hover:scale-125 transition-transform duration-300">
+                 {/* <div className="absolute top-4 left-4 text-3xl group-hover:scale-125 transition-transform duration-300">
                     {category.icon}
-                  </div>
+                  </div>*/}
                 </div>
                 <CardContent className="p-6 text-center space-y-3">
                   <h3 className="font-semibold text-lg group-hover:text-primary transition-colors duration-300">
