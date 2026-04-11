@@ -498,7 +498,7 @@ export default function LoginPage() {
 
         {/* Footer text */}
         <p className="text-center text-xs text-gray-600 mt-6">
-          &copy; 2024 StepUp. All rights reserved.
+          &copy; 2026 StepUp. All rights reserved.
         </p>
       </div>
 

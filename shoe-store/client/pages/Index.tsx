@@ -1068,89 +1068,73 @@ export default function Index() {
         )}
       </nav>
 
-      {/* Modern Hero Section */}
-      <style>{`
-        @keyframes customFloat {
-          0% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(2deg); }
-          100% { transform: translateY(0px) rotate(0deg); }
-        }
-        .animate-float-shoe {
-          animation: customFloat 6s ease-in-out infinite;
-        }
-      `}</style>
-      <section className="relative overflow-hidden min-h-[85vh] flex items-center justify-center bg-[#111111] dark:bg-background pt-12 border-b border-white/5">
-        {/* Huge Background Text */}
-        <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
-          <h1 className="text-[15vw] font-black text-white/[0.03] dark:text-white/[0.02] whitespace-nowrap select-none tracking-tighter">
-            AIR MAX FE
-          </h1>
-        </div>
+      {/* Tradewood Style Light Hero Section */}
+      <section className="relative overflow-hidden min-h-[90vh] bg-white flex items-center font-sans tracking-tight pt-16">
+        {/* Decorative Green Blobs */}
+        <div className="absolute left-10 md:left-20 top-20 w-48 h-48 bg-[#f1f8e9] rounded-full blur-3xl opacity-80 pointer-events-none"></div>
+        <div className="absolute left-32 md:left-48 top-32 w-56 h-56 bg-[#eaddcf] rounded-full blur-[60px] opacity-40 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-gray-50 to-transparent pointer-events-none"></div>
         
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col items-center justify-center">
-            
-            {/* Center Shoe & Pedestal */}
-            <div className="relative w-full max-w-2xl mx-auto mt-8 mb-24 flex flex-col items-center">
-              <img
-                src={heroShoes[currentHeroImage]}
-                alt="Featured Shoe"
-                className="w-full h-auto max-h-[450px] object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.6)] z-20 animate-float-shoe cursor-pointer"
-                onClick={() => setCurrentPage("categories")}
-              />
-              
-              {/* CSS 3D Pedestal */}
-              <div className="absolute bottom-0 w-64 md:w-80 h-20 bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] dark:from-gray-800 dark:to-gray-950 rounded-[100%] shadow-[0_30px_50px_rgba(0,0,0,0.7)] border border-white/10 z-10 translate-y-1/2">
-                <div className="absolute inset-x-2 top-2 bottom-3 bg-gradient-to-b from-[#3a3a3a] to-[#222] dark:from-gray-700 dark:to-gray-900 rounded-[100%] border-t border-white/20"></div>
-              </div>
-            </div>
-
-            {/* Bottom Content & Selectors */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-12 items-end">
-              {/* Left Features */}
-              <div className="space-y-6 text-left flex flex-col md:items-start items-center">
-                 <div className="flex items-center gap-4 text-gray-400 group cursor-pointer" onClick={() => setCurrentPage("sale")}>
-                    <div className="w-10 h-10 border border-gray-700 rounded-full flex items-center justify-center group-hover:border-primary transition-colors">
-                      <span className="text-xs">%</span>
-                    </div>
-                    <div className="text-sm">
-                      <p className="font-semibold text-gray-200 group-hover:text-white transition-colors">Check out discounts</p>
-                      <p className="text-gray-500">at offline stores</p>
-                    </div>
-                 </div>
-                 <div className="flex items-center gap-4 text-gray-400 group cursor-pointer" onClick={() => setCurrentPage("categories")}>
-                    <div className="w-10 h-10 border border-gray-700 rounded-full flex items-center justify-center group-hover:border-primary transition-colors">
-                      <span className="text-xs">✧</span>
-                    </div>
-                    <div className="text-sm">
-                      <p className="font-semibold text-gray-200 group-hover:text-white transition-colors">New releases</p>
-                      <p className="text-gray-500">available now</p>
-                    </div>
-                 </div>
-              </div>
-
-              {/* Center Image Selector */}
-              <div className="flex justify-center gap-4 py-4">
-                {heroShoes.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentHeroImage(index)}
-                    className={`rounded-full transition-all duration-300 ${
-                      index === currentHeroImage
-                        ? "w-8 h-2 bg-white"
-                        : "w-2 h-2 bg-gray-600 hover:bg-gray-400"
-                    }`}
-                  />
-                ))}
-              </div>
-
-              {/* Right Details */}
-              <div className="flex flex-col md:items-end items-center gap-1 text-sm text-gray-500 text-center md:text-right">
-                <p>3142, Mars Avenue, CA.</p>
-                <p>5 minutes from HQ Store</p>
-              </div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col lg:flex-row items-center justify-between gap-12">
+          
+          {/* Left Text Side */}
+          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-20">
+            <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] leading-[1.05] font-black text-black">
+              Best In Style<br />
+              Collection<br />
+              For You
+            </h1>
+            <div className="w-full max-w-sm mt-4 lg:mt-8 border-t border-gray-200">
+               <p className="text-gray-600 text-sm md:text-base pt-6 leading-relaxed">
+                 We craft the, we wont say the best,<br />
+                 But through 70 years of experience in the industry
+               </p>
             </div>
             
+            <Button
+              className="bg-black hover:bg-gray-800 text-white rounded-[2rem] px-8 py-6 text-sm font-semibold tracking-wide shadow-xl transition-transform hover:scale-105 duration-300 mt-2"
+              onClick={() => setCurrentPage("categories")}
+            >
+              Pre-order Now
+            </Button>
+            
+            {/* Bottom Stat */}
+            <div className="mt-12 lg:mt-24 flex flex-col border-l-4 border-[#a4e12e] pl-4 self-center lg:self-center">
+              <span className="text-xs text-gray-500 font-medium uppercase tracking-wider">Toe Comfort</span>
+              <span className="text-xl font-bold text-black mt-1">Fast Running</span>
+            </div>
+          </div>
+
+          {/* Right Shoe Side */}
+          <div className="w-full lg:w-1/2 relative mt-20 lg:mt-0 flex justify-center items-center min-h-[400px]">
+            {/* Dashed Circle Backing */}
+            <div className="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full border border-dashed border-gray-400 rotate-45 pointer-events-none">
+               <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border border-gray-400 rounded-full"></div>
+               <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-4 h-4 bg-white border border-gray-400 rounded-full"></div>
+               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border border-gray-400 rounded-full"></div>
+               <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 w-4 h-4 bg-white border border-gray-400 rounded-full"></div>
+            </div>
+
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F8b39261676d1488287ee26a617ce70a7%2F8acfe831d390479c9fa8ca92e24c4b6e"
+              alt="Premium Running Shoe"
+              className="relative z-10 w-[110%] max-w-[600px] object-contain drop-shadow-[-20px_30px_20px_rgba(0,0,0,0.25)] transform -rotate-[25deg] hover:rotate-[0deg] hover:scale-105 transition-all duration-700 ease-out cursor-pointer"
+              onClick={() => setCurrentPage("categories")}
+            />
+            
+            {/* Flash/Charge icon background elements */}
+            <div className="absolute right-4 bottom-32 opacity-10 pointer-events-none text-7xl rotate-12 flex gap-1">
+              <span>⚡</span><span>⚡</span>
+            </div>
+
+            {/* Right Bottom Stat */}
+            <div className="absolute -bottom-4 right-8 lg:right-20 flex flex-col items-end z-20">
+               <span className="text-xs text-gray-500 font-medium tracking-wider">Daily Workout</span>
+               <div className="flex items-center gap-3 mt-1">
+                 <span className="text-3xl font-bold text-black">58%</span>
+                 <div className="w-3 h-3 rounded-full bg-[#a4e12e] shadow-[0_0_10px_rgba(164,225,46,0.8)]"></div>
+               </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1515,7 +1499,7 @@ export default function Index() {
             </div>
           </div>
           <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 StepUp. All rights reserved.</p>
+            <p>&copy; 2026 StepUp. All rights reserved.</p>
           </div>
         </div>
       </footer>
