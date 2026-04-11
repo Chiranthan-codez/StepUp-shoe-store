@@ -48,8 +48,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         .then((res) => (res.ok ? res.json() : Promise.reject()))
         .then((data) => setUser(data.user))
         .catch(() => {});
-      // Clean up URL
-      window.history.replaceState({}, "", window.location.pathname);
+      // Clean up URL safely without causing SecurityError cross-origin blocks
+      const newUrl = new URL(window.location.href);
+      newUrl.searchParams.delete("login");
+      window.history.replaceState({}, "", newUrl.toString());
     }
   }, []);
 
