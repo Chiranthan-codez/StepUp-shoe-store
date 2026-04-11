@@ -375,7 +375,7 @@ export default function LoginPage() {
                     <button
                       type="button"
                       className="text-xs hover:underline"
-                      style={{ color: "rgba(40, 40, 40, 1)" }}
+                      style={{ color: "rgba(35, 35, 35, 1)" }}
                     >
                       Forgot password?
                     </button>
