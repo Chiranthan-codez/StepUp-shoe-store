@@ -8,6 +8,9 @@ import bcrypt from "bcryptjs";
 import mysql from "mysql2/promise";
 import { handleDemo } from "./routes/demo";
 import { authRoutes } from "./routes/auth";
+import { cartRoutes } from "./routes/cart";
+import { wishlistRoutes } from "./routes/wishlist";
+import { orderRoutes } from "./routes/orders";
 
 export async function createServer() {
   const app = express();
@@ -122,6 +125,9 @@ export async function createServer() {
   app.get("/api/ping", (_req, res) => res.json({ message: "StepUp API running!" }));
   app.get("/api/demo", handleDemo);
   app.use("/api/auth", authRoutes(passport, db));
+  app.use("/api/cart", cartRoutes(db));
+  app.use("/api/wishlist", wishlistRoutes(db));
+  app.use("/api/orders", orderRoutes(db));
 
   // Check current user
   app.get("/api/me", (req, res) => {

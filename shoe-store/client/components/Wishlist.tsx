@@ -128,7 +128,7 @@ export default function Wishlist({
                       <Button
                         size="sm"
                         className="w-full hover:scale-105 transition-transform duration-300"
-                        style={{ backgroundColor: "rgba(63, 60, 68, 1)" }}
+                        style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
                         onClick={() => onAddToCart(product)}
                       >
                         <ShoppingBag className="h-3 w-3 mr-2" />
@@ -156,7 +156,7 @@ export default function Wishlist({
                       items.forEach((item) => onAddToCart(item));
                       onClose();
                     }}
-                    style={{ backgroundColor: "rgba(63, 60, 68, 1)" }}
+                    style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
                   >
                     Add All to Cart
                   </Button>

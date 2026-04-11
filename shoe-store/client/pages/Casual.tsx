@@ -228,7 +228,8 @@ export default function Casual({
                     </Badge>
                   </div>
                   <Button
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/80 transition-all duration-300 transform group-hover:scale-105"
+                    className="w-full transition-all duration-300 transform group-hover:scale-105"
+style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
                     onClick={(e) => {
                       e.stopPropagation();
                       onAddToCart(product);

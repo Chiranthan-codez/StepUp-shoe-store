@@ -12,10 +12,12 @@ import {
   Sun,
   Moon,
   LogOut,
+  Package,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/lib/AuthContext";
+import { apiUrl } from "@/lib/api";
 import Wishlist from "@/components/Wishlist";
 import Cart from "@/components/Cart";
 import Toast from "@/components/Toast";
@@ -27,6 +29,7 @@ import Categories from "./Categories";
 import Running from "./Running";
 import Casual from "./Casual";
 import Training from "./Training";
+import Orders from "./Orders";
 import Lifestyle from "./Lifestyle";
 import Brands from "./Brands";
 import AllProducts from "./AllProducts";
@@ -202,6 +205,39 @@ export default function Index() {
     updateTheme(shouldUseDark);
   }, []);
 
+  // Load cart from database on mount
+  const loadCart = useCallback(async () => {
+    try {
+      const res = await fetch(apiUrl("/api/cart"), { credentials: "include" });
+      if (res.ok) {
+        const data = await res.json();
+        setCartItems(data.items || []);
+      }
+    } catch {
+      // Silently fail — cart stays empty
+    }
+  }, []);
+
+  // Load wishlist from database on mount
+  const loadWishlist = useCallback(async () => {
+    try {
+      const res = await fetch(apiUrl("/api/wishlist"), { credentials: "include" });
+      if (res.ok) {
+        const data = await res.json();
+        setWishlistItems(data.items || []);
+      }
+    } catch {
+      // Silently fail
+    }
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      loadCart();
+      loadWishlist();
+    }
+  }, [user, loadCart, loadWishlist]);
+
   const updateTheme = (dark: boolean) => {
     if (dark) {
       document.documentElement.classList.add("dark");
@@ -229,27 +265,61 @@ export default function Index() {
     setToast({ message, isVisible: true, type });
   };
 
-  const addToWishlist = (product: any) => {
+  const addToWishlist = async (product: any) => {
     const isAlreadyInWishlist = wishlistItems.some(
       (item) => item.id === product.id,
     );
     if (!isAlreadyInWishlist) {
       setWishlistItems([...wishlistItems, product]);
       showToast(`${product.name} added to wishlist!`);
+
+      // Sync to database
+      try {
+        await fetch(apiUrl("/api/wishlist"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({
+            productId: product.id,
+            name: product.name,
+            brand: product.brand,
+            price: product.price,
+            originalPrice: product.originalPrice,
+            image: product.image,
+            rating: product.rating,
+            reviews: product.reviews,
+            category: product.category,
+            isNew: product.isNew,
+          }),
+        });
+      } catch {
+        // API failed but UI already updated
+      }
     } else {
       showToast(`${product.name} is already in your wishlist!`, "info");
     }
   };
 
-  const removeFromWishlist = (productId: number) => {
+  const removeFromWishlist = async (productId: number) => {
     const product = wishlistItems.find((item) => item.id === productId);
     setWishlistItems(wishlistItems.filter((item) => item.id !== productId));
     if (product) {
       showToast(`${product.name} removed from wishlist!`);
     }
+
+    // Sync to database
+    try {
+      await fetch(apiUrl(`/api/wishlist/${productId}`), {
+        method: "DELETE",
+        credentials: "include",
+      });
+    } catch {
+      // API failed but UI already updated
+    }
   };
 
-  const addToCart = (product: any) => {
+  const addToCart = async (product: any) => {
+    // Optimistic UI update
     const existingItem = cartItems.find((item) => item.id === product.id);
     if (existingItem) {
       setCartItems(
@@ -263,17 +333,50 @@ export default function Index() {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
     showToast(`${product.name} added to cart!`);
+
+    // Sync to database
+    try {
+      await fetch(apiUrl("/api/cart"), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          productId: product.id,
+          quantity: 1,
+          name: product.name,
+          brand: product.brand,
+          price: product.price,
+          originalPrice: product.originalPrice,
+          image: product.image,
+          rating: product.rating,
+          reviews: product.reviews,
+          category: product.category,
+        }),
+      });
+    } catch {
+      // API failed but UI already updated
+    }
   };
 
-  const removeFromCart = (productId: number) => {
+  const removeFromCart = async (productId: number) => {
     const product = cartItems.find((item) => item.id === productId);
     setCartItems(cartItems.filter((item) => item.id !== productId));
     if (product) {
       showToast(`${product.name} removed from cart!`);
     }
+
+    // Sync to database
+    try {
+      await fetch(apiUrl(`/api/cart/${productId}`), {
+        method: "DELETE",
+        credentials: "include",
+      });
+    } catch {
+      // API failed but UI already updated
+    }
   };
 
-  const updateCartQuantity = (productId: number, quantity: number) => {
+  const updateCartQuantity = async (productId: number, quantity: number) => {
     if (quantity === 0) {
       removeFromCart(productId);
     } else {
@@ -282,6 +385,18 @@ export default function Index() {
           item.id === productId ? { ...item, quantity } : item,
         ),
       );
+
+      // Sync to database
+      try {
+        await fetch(apiUrl(`/api/cart/${productId}`), {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ quantity }),
+        });
+      } catch {
+        // API failed but UI already updated
+      }
     }
   };
 
@@ -323,6 +438,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -355,6 +471,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -387,6 +504,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -419,6 +537,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -450,6 +569,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -482,6 +602,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -514,6 +635,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -546,6 +668,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -578,6 +701,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -609,6 +733,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -642,6 +767,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -674,6 +800,7 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -707,6 +834,36 @@ export default function Index() {
           items={cartItems}
           onRemoveFromCart={removeFromCart}
           onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
+        />
+        <Toast
+          message={toast.message}
+          isVisible={toast.isVisible}
+          onClose={() => setToast({ ...toast, isVisible: false })}
+          type={toast.type}
+        />
+      </>
+    );
+  }
+
+  if (currentPage === "orders") {
+    return (
+      <>
+        <Orders onBack={() => setCurrentPage("home")} />
+        <Wishlist
+          isOpen={isWishlistOpen}
+          onClose={() => setIsWishlistOpen(false)}
+          items={wishlistItems}
+          onRemoveFromWishlist={removeFromWishlist}
+          onAddToCart={addToCart}
+        />
+        <Cart
+          isOpen={isCartOpen}
+          onClose={() => setIsCartOpen(false)}
+          items={cartItems}
+          onRemoveFromCart={removeFromCart}
+          onUpdateQuantity={updateCartQuantity}
+          onOrderComplete={() => { setCartItems([]); loadCart(); }}
         />
         <Toast
           message={toast.message}
@@ -844,6 +1001,16 @@ export default function Index() {
                       <p className="text-xs text-muted-foreground truncate">{user?.email}</p>
                     </div>
                     <button
+                      onClick={() => {
+                        setCurrentPage("orders");
+                        setShowUserMenu(false);
+                      }}
+                      className="flex items-center gap-2 w-full px-2 py-2 mb-1 text-sm hover:bg-muted rounded-md transition-colors"
+                    >
+                      <Package className="h-4 w-4" />
+                      My Orders
+                    </button>
+                    <button
                       onClick={async () => {
                         await logout();
                         setShowUserMenu(false);
@@ -958,7 +1125,7 @@ export default function Index() {
                 <Button
                   size="lg"
                   className="text-lg px-8 hover:scale-105 transition-transform duration-300"
-                  style={{ backgroundColor: "rgba(220, 38, 38, 1)" }}
+                  style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
                   onClick={() => setCurrentPage("categories")}
                 >
                   <p>Shop collection</p>
@@ -1193,7 +1360,7 @@ export default function Index() {
                   </div>
                   <Button
                     className="w-full group-hover:bg-red-600 group-hover:text-white transition-all duration-300 transform group-hover:scale-105"
-                    style={{ backgroundColor: "rgba(220, 38, 38, 1)" }}
+                    style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
                     onClick={(e) => {
                       e.stopPropagation();
                       addToCart(product);
@@ -1554,7 +1721,7 @@ export default function Index() {
                     <div className="flex gap-3">
                       <Button
                         className="flex-1 hover:scale-105 transition-transform duration-300"
-                        style={{ backgroundColor: "rgba(63, 60, 68, 1)" }}
+                        style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
                       >
                         Add to Cart
                       </Button>

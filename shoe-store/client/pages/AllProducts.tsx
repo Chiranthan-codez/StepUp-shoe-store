@@ -405,7 +405,7 @@ export default function AllProducts({
                   </div>
                   <Button
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 transform group-hover:scale-105"
-                    style={{ backgroundColor: "rgba(220, 38, 38, 1)" }}
+                    style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
                     onClick={(e) => {
                       e.stopPropagation();
                       onAddToCart(product);
