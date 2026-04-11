@@ -1,7 +1,6 @@
 import { Router } from "express";
-import type { Pool } from "mysql2/promise";
 
-export function orderRoutes(db: Pool) {
+export function orderRoutes(db: any) {
   const router = Router();
 
   const requireAuth = (req: any, res: any, next: any) => {

@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: stepup-backend
+    env: node
+    buildCommand: npm install && npm run build:server
+    startCommand: node dist/server/node-build.mjs
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        sync: false

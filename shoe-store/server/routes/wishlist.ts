@@ -1,7 +1,6 @@
 import { Router } from "express";
-import type { Pool } from "mysql2/promise";
 
-export function wishlistRoutes(db: Pool) {
+export function wishlistRoutes(db: any) {
   const router = Router();
 
   // Auth middleware

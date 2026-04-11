@@ -5,35 +5,56 @@ import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { Strategy as LocalStrategy } from "passport-local";
 import bcrypt from "bcryptjs";
-import mysql from "mysql2/promise";
+import { Pool } from "pg";
 import { handleDemo } from "./routes/demo";
 import { authRoutes } from "./routes/auth";
 import { cartRoutes } from "./routes/cart";
 import { wishlistRoutes } from "./routes/wishlist";
 import { orderRoutes } from "./routes/orders";
 
-export async function createServer() {
+export function createServer() {
   const app = express();
 
-  // MySQL connection pool
-  const db = mysql.createPool({
-    host: process.env.DB_HOST || "localhost",
-    user: process.env.DB_USER || "root",
-    port: Number(process.env.DB_PORT) || 3307,
-    password: process.env.DB_PASSWORD || "xzvb##1234A",
-    database: process.env.DB_NAME || "stepup_shoes",
-    waitForConnections: true,
-    connectionLimit: 10,
+  const isProduction = process.env.NODE_ENV === "production";
+
+  // PostgreSQL connection pool
+  const pgPool = new Pool({
+    connectionString: process.env.DATABASE_URL || "postgres://postgres:xzvb@localhost:5432/stepup_shoes",
+    ssl: isProduction && process.env.DATABASE_URL ? { rejectUnauthorized: false } : undefined,
   });
-  /*const db = mysql.createPool({
-  host: process.env.MYSQLHOST,
-  user: process.env.MYSQLUSER,
-  port: Number(process.env.MYSQLPORT),
-  password: process.env.MYSQLPASSWORD,
-  database: process.env.MYSQLDATABASE,
-  waitForConnections: true,
-  connectionLimit: 10
-});*/
+
+  const db = {
+    query: async (text: string, params?: any[]) => {
+      let pgText = text;
+      // Convert ? to $1, $2
+      if (params) {
+        let i = 1;
+        pgText = pgText.replace(/\?/g, () => `$${i++}`);
+      }
+      
+      const isInsert = pgText.trim().toUpperCase().startsWith("INSERT");
+      if (isInsert && !pgText.toUpperCase().includes("RETURNING")) {
+        pgText += " RETURNING id";
+      }
+
+      try {
+        const result = await pgPool.query(pgText, params);
+        
+        let insertId;
+        if (isInsert && result.rows && result.rows.length > 0) {
+            insertId = result.rows[0].id;
+        }
+        
+        const rowsArray = result.rows || [];
+        (rowsArray as any).insertId = insertId;
+        
+        return [rowsArray, result.fields];
+      } catch (err) {
+        console.error("DB Query error:", pgText, params, err);
+        throw err;
+      }
+    }
+  };
 
   // Make db available to routes
   app.locals.db = db;
@@ -58,7 +79,6 @@ export async function createServer() {
   app.use(express.urlencoded({ extended: true }));
 
   // Session — with cross-origin cookie support for split deployment
-  const isProduction = process.env.NODE_ENV === "production";
   app.use(session({
     secret: process.env.SESSION_SECRET || "stepup-secret-key-change-in-production",
     resave: false,

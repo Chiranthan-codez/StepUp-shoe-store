@@ -1,8 +1,7 @@
 import { Router } from "express";
 import bcrypt from "bcryptjs";
-import type { Pool } from "mysql2/promise";
 
-export function authRoutes(passport: any, db: Pool) {
+export function authRoutes(passport: any, db: any) {
   const router = Router();
 
   // Register

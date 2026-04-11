@@ -3,7 +3,7 @@ import { createServer } from "./index";
 import * as express from "express";
 
 async function start() {
-  const app = await createServer();
+  const app = createServer();
   const port = process.env.PORT || 3000;
 
   // In production, serve the built SPA files
