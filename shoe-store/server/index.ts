@@ -23,36 +23,42 @@ export function createServer() {
     ssl: isProduction && process.env.DATABASE_URL ? { rejectUnauthorized: false } : undefined,
   });
 
-  const db = {
-    query: async (text: string, params?: any[]) => {
+  const buildQuery = async (clientOrPool: any, text: string, params?: any[]) => {
       let pgText = text;
-      // Convert ? to $1, $2
       if (params) {
         let i = 1;
         pgText = pgText.replace(/\?/g, () => `$${i++}`);
       }
-      
       const isInsert = pgText.trim().toUpperCase().startsWith("INSERT");
       if (isInsert && !pgText.toUpperCase().includes("RETURNING")) {
         pgText += " RETURNING id";
       }
-
       try {
-        const result = await pgPool.query(pgText, params);
-        
+        const result = await clientOrPool.query(pgText, params);
         let insertId;
         if (isInsert && result.rows && result.rows.length > 0) {
             insertId = result.rows[0].id;
         }
-        
         const rowsArray = result.rows || [];
         (rowsArray as any).insertId = insertId;
-        
         return [rowsArray, result.fields];
       } catch (err) {
         console.error("DB Query error:", pgText, params, err);
         throw err;
       }
+  };
+
+  const db = {
+    query: async (text: string, params?: any[]) => buildQuery(pgPool, text, params),
+    getConnection: async () => {
+      const client = await pgPool.connect();
+      return {
+        query: async (text: string, params?: any[]) => buildQuery(client, text, params),
+        beginTransaction: async () => client.query("BEGIN"),
+        commit: async () => client.query("COMMIT"),
+        rollback: async () => client.query("ROLLBACK"),
+        release: () => client.release()
+      };
     }
   };
 
