@@ -153,8 +153,6 @@ export default function Index() {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const [hoveredCategory, setHoveredCategory] = useState<number | null>(null);
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [showCursorShoe, setShowCursorShoe] = useState(false);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [showUserMenu, setShowUserMenu] = useState(false);
@@ -251,10 +249,6 @@ export default function Index() {
     setIsDarkMode(newTheme);
     updateTheme(newTheme);
     localStorage.setItem("theme", newTheme ? "dark" : "light");
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setCursorPosition({ x: e.clientX, y: e.clientY });
   };
 
   // Helper functions
@@ -876,27 +870,7 @@ export default function Index() {
   }
 
   return (
-    <div className="min-h-screen bg-background" onMouseMove={handleMouseMove}>
-      {/* Floating Cursor Shoe */}
-      {showCursorShoe && (
-        <div
-          className="fixed pointer-events-none z-[100] transition-all duration-300 ease-out"
-          style={{
-            left: cursorPosition.x + 10,
-            top: cursorPosition.y - 10,
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          <div className="w-20 h-20 bg-primary/10 backdrop-blur-sm rounded-full p-2 border border-primary/20">
-            <img
-              src={featuredProducts[0].image}
-              alt="Cursor shoe"
-              className="w-full h-full object-contain"
-            />
-          </div>
-        </div>
-      )}
-
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -905,8 +879,6 @@ export default function Index() {
             <div className="flex items-center">
               <div
                 className="text-2xl font-bold bg-gradient-to-r from-primary to-brand-600 bg-clip-text text-transparent cursor-pointer hover:scale-105 transition-transform duration-300"
-                onMouseEnter={() => setShowCursorShoe(true)}
-                onMouseLeave={() => setShowCursorShoe(false)}
               >
                 <h3>
                   <span style={{ color: "rgb(204, 50, 22)" }}>StepUp</span>
@@ -1096,89 +1068,89 @@ export default function Index() {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-background dark:via-background dark:to-accent/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
-            <div className="space-y-8 flex flex-col items-center lg:items-start">
-              <div className="space-y-4">
-                <Badge variant="secondary" className="w-fit animate-pulse">
-                  New Collection 2024
-                </Badge>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                  Step Into Your
-                  <span className="block bg-gradient-to-r from-primary to-brand-600 bg-clip-text text-transparent">
-                    <p>
-                      <span style={{ color: "rgb(208, 2, 27)" }}>
-                        Best Perfomance
-                      </span>
-                    </p>
-                  </span>
-                </h1>
-                <p className="text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0">
-                  Discover premium athletic footwear designed for comfort,
-                  style, and peak performance. From running to lifestyle, find
-                  your perfect pair.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="text-lg px-8 hover:scale-105 transition-transform duration-300 w-full sm:w-auto"
-                  style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
-                  onClick={() => setCurrentPage("categories")}
-                >
-                  <p>Shop collection</p>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-lg px-8 hover:scale-105 transition-transform duration-300 w-full sm:w-auto"
-                  onClick={() => setCurrentPage("brands")}
-                >
-                  Explore Brands
-                </Button>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span className="text-primary font-semibold">✓</span>
-                  </div>
-                  Free shipping over ₹6000
-                </div>
-                <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span className="text-primary font-semibold">↩</span>
-                  </div>
-                  30-day returns
-                </div>
+      {/* Modern Hero Section */}
+      <style>{`
+        @keyframes customFloat {
+          0% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(2deg); }
+          100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float-shoe {
+          animation: customFloat 6s ease-in-out infinite;
+        }
+      `}</style>
+      <section className="relative overflow-hidden min-h-[85vh] flex items-center justify-center bg-[#111111] dark:bg-background pt-12 border-b border-white/5">
+        {/* Huge Background Text */}
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
+          <h1 className="text-[15vw] font-black text-white/[0.03] dark:text-white/[0.02] whitespace-nowrap select-none tracking-tighter">
+            AIR MAX FE
+          </h1>
+        </div>
+        
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex flex-col items-center justify-center">
+            
+            {/* Center Shoe & Pedestal */}
+            <div className="relative w-full max-w-2xl mx-auto mt-8 mb-24 flex flex-col items-center">
+              <img
+                src={heroShoes[currentHeroImage]}
+                alt="Featured Shoe"
+                className="w-full h-auto max-h-[450px] object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.6)] z-20 animate-float-shoe cursor-pointer"
+                onClick={() => setCurrentPage("categories")}
+              />
+              
+              {/* CSS 3D Pedestal */}
+              <div className="absolute bottom-0 w-64 md:w-80 h-20 bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] dark:from-gray-800 dark:to-gray-950 rounded-[100%] shadow-[0_30px_50px_rgba(0,0,0,0.7)] border border-white/10 z-10 translate-y-1/2">
+                <div className="absolute inset-x-2 top-2 bottom-3 bg-gradient-to-b from-[#3a3a3a] to-[#222] dark:from-gray-700 dark:to-gray-900 rounded-[100%] border-t border-white/20"></div>
               </div>
             </div>
-            <div className="relative group max-w-md mx-auto lg:max-w-full w-full">
-              <div className="aspect-square bg-gradient-to-br from-primary/5 to-brand-100/50 rounded-3xl p-8 relative overflow-hidden">
-                <img
-                  src={heroShoes[currentHeroImage]}
-                  alt="Featured Shoe"
-                  className="w-full h-full object-contain transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 ease-out font-medium border-gray-500 pb-4 -mr-4 -mt-1"
-                />
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
-                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-brand-300/30 rounded-full blur-2xl animate-pulse delay-1000"></div>
+
+            {/* Bottom Content & Selectors */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-12 items-end">
+              {/* Left Features */}
+              <div className="space-y-6 text-left flex flex-col md:items-start items-center">
+                 <div className="flex items-center gap-4 text-gray-400 group cursor-pointer" onClick={() => setCurrentPage("sale")}>
+                    <div className="w-10 h-10 border border-gray-700 rounded-full flex items-center justify-center group-hover:border-primary transition-colors">
+                      <span className="text-xs">%</span>
+                    </div>
+                    <div className="text-sm">
+                      <p className="font-semibold text-gray-200 group-hover:text-white transition-colors">Check out discounts</p>
+                      <p className="text-gray-500">at offline stores</p>
+                    </div>
+                 </div>
+                 <div className="flex items-center gap-4 text-gray-400 group cursor-pointer" onClick={() => setCurrentPage("categories")}>
+                    <div className="w-10 h-10 border border-gray-700 rounded-full flex items-center justify-center group-hover:border-primary transition-colors">
+                      <span className="text-xs">✧</span>
+                    </div>
+                    <div className="text-sm">
+                      <p className="font-semibold text-gray-200 group-hover:text-white transition-colors">New releases</p>
+                      <p className="text-gray-500">available now</p>
+                    </div>
+                 </div>
               </div>
-              {/* Hero Image Selector */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+
+              {/* Center Image Selector */}
+              <div className="flex justify-center gap-4 py-4">
                 {heroShoes.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentHeroImage(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    className={`rounded-full transition-all duration-300 ${
                       index === currentHeroImage
-                        ? "bg-primary scale-125"
-                        : "bg-primary/30 hover:bg-primary/60"
+                        ? "w-8 h-2 bg-white"
+                        : "w-2 h-2 bg-gray-600 hover:bg-gray-400"
                     }`}
                   />
                 ))}
               </div>
+
+              {/* Right Details */}
+              <div className="flex flex-col md:items-end items-center gap-1 text-sm text-gray-500 text-center md:text-right">
+                <p>3142, Mars Avenue, CA.</p>
+                <p>5 minutes from HQ Store</p>
+              </div>
             </div>
+            
           </div>
         </div>
       </section>
