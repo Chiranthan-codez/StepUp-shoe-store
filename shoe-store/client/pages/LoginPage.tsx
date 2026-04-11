@@ -208,10 +208,10 @@ export default function LoginPage() {
             <div className="text-center space-y-1">
               <CardTitle className="text-2xl flex items-center justify-center gap-2 text-white">
                 {isLogin ? "Sign In" : "Create Account"}
-                <Sparkles
+               {/*} <Sparkles
                   className="h-5 w-5 text-yellow-500"
                   style={{ animation: "spin 3s linear infinite" }}
-                />
+                />*/}
               </CardTitle>
               <p className="text-sm text-gray-400">
                 {isLogin
