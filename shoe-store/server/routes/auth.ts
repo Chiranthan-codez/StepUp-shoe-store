@@ -45,9 +45,9 @@ export function authRoutes(passport: any, db: any) {
   // Google OAuth
   router.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
   router.get("/google/callback",
-    passport.authenticate("google", { failureRedirect: `${process.env.CLIENT_URL || ""}/login?login=failed` }),
+    passport.authenticate("google", { failureRedirect: `${(process.env.CLIENT_URL || "").replace(/\/$/, "")}/login?login=failed` }),
     (req, res) => {
-      const clientUrl = process.env.CLIENT_URL || "";
+      const clientUrl = (process.env.CLIENT_URL || "").replace(/\/$/, "");
       res.redirect(`${clientUrl}/home?login=success`);
     }
   );
