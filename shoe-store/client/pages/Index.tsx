@@ -951,7 +951,7 @@ export default function Index() {
                   <Moon className="h-5 w-5" />
                 )}
               </Button>
-              <div className="relative hidden sm:block">
+              <div className="relative">
                 <Button
                   variant="ghost"
                   size="icon"
