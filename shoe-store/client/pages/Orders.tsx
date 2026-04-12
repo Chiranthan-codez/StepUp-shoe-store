@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Package, Clock, CheckCircle2, XCircle, CreditCard, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowLeft, Package, Clock, CheckCircle2, XCircle, CreditCard, ChevronDown, ChevronUp, ShoppingBag } from "lucide-react";
 import { apiUrl } from "@/lib/api";
 
 interface OrderItem {
