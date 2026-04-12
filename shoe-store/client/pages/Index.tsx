@@ -410,6 +410,201 @@ export default function Index() {
     setCurrentPage("brandproducts");
   };
 
+  // Shared components helper
+  const renderSharedComponents = () => (
+    <>
+      <Wishlist
+        isOpen={isWishlistOpen}
+        onClose={() => setIsWishlistOpen(false)}
+        items={wishlistItems}
+        onRemoveFromWishlist={removeFromWishlist}
+        onAddToCart={addToCart}
+      />
+      <Cart
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        items={cartItems}
+        onRemoveFromCart={removeFromCart}
+        onUpdateQuantity={updateCartQuantity}
+        onOrderComplete={() => {
+          setCartItems([]);
+          loadCart();
+        }}
+      />
+      <Toast
+        message={toast.message}
+        isVisible={toast.isVisible}
+        onClose={() => setToast({ ...toast, isVisible: false })}
+        type={toast.type}
+      />
+      {previewProduct && (
+        <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-2 sm:p-4 overflow-y-auto">
+          <div className="animate-in fade-in-0 zoom-in-95 duration-300 w-full max-w-2xl my-auto">
+            <Card className="border-0 shadow-2xl max-h-none sm:max-h-[90vh] overflow-hidden">
+              <CardContent className="p-0 relative flex flex-col">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setPreviewProduct(null)}
+                  className="absolute top-4 right-4 z-10 h-8 w-8 bg-background/80 backdrop-blur-sm hover:scale-110 transition-transform duration-300"
+                >
+                  <span className="text-lg">×</span>
+                </Button>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 sm:p-6 overflow-y-auto">
+                  {/* Image Gallery */}
+                  <div className="space-y-4">
+                    <div className="aspect-square bg-gradient-to-br from-muted/50 to-card rounded-xl overflow-hidden">
+                      <img
+                        src={
+                          previewProduct.previewImages?.[currentPreviewImage] ||
+                          previewProduct.image
+                        }
+                        alt={previewProduct.name}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    {previewProduct.previewImages && (
+                      <div className="flex gap-2 overflow-x-auto">
+                        {previewProduct.previewImages.map(
+                          (img: string, index: number) => (
+                            <button
+                              key={index}
+                              onClick={() => setCurrentPreviewImage(index)}
+                              className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                                index === currentPreviewImage
+                                  ? "border-primary scale-105"
+                                  : "border-transparent hover:border-primary/50"
+                              }`}
+                            >
+                              <img
+                                src={img}
+                                alt={`${previewProduct.name} preview ${index + 1}`}
+                                className="w-full h-full object-cover"
+                              />
+                            </button>
+                          ),
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Product Details */}
+                  <div className="space-y-6">
+                    <div className="space-y-2">
+                      <p className="text-sm text-muted-foreground font-medium">
+                        {previewProduct.brand}
+                      </p>
+                      <h2 className="text-2xl font-bold">
+                        {previewProduct.name}
+                      </h2>
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1">
+                          <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                          <span className="text-sm font-medium">
+                            {previewProduct.rating}
+                          </span>
+                        </div>
+                        <span className="text-sm text-muted-foreground">
+                          ({previewProduct.reviews} reviews)
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3">
+                        <span className="text-3xl font-bold">
+                          ₹{previewProduct.price * 80}
+                        </span>
+                        {previewProduct.originalPrice && (
+                          <span className="text-lg text-muted-foreground line-through">
+                            ₹{previewProduct.originalPrice * 80}
+                          </span>
+                        )}
+                      </div>
+                      <Badge variant="secondary" className="w-fit">
+                        {previewProduct.category}
+                      </Badge>
+                    </div>
+
+                    <div className="space-y-3">
+                      <h4 className="font-semibold">Available Colors</h4>
+                      <div className="flex gap-2">
+                        {previewProduct.colors.map(
+                          (color: string, index: number) => (
+                            <div
+                              key={index}
+                              className={`w-8 h-8 rounded-full border-2 border-white shadow-md cursor-pointer hover:scale-125 transition-transform duration-300 ${
+                                color.toLowerCase() === "red"
+                                  ? "bg-red-500"
+                                  : color.toLowerCase() === "black"
+                                    ? "bg-black"
+                                    : color.toLowerCase() === "white"
+                                      ? "bg-white border-gray-300"
+                                      : color.toLowerCase() === "blue"
+                                        ? "bg-blue-500"
+                                        : color.toLowerCase() === "gray"
+                                          ? "bg-gray-500"
+                                          : color.toLowerCase() === "orange"
+                                            ? "bg-orange-500"
+                                            : "bg-gray-300"
+                              }`}
+                              title={color}
+                            />
+                          ),
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      <h4 className="font-semibold">Product Features</h4>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex items-center gap-2">
+                          <span className="w-1 h-1 bg-primary rounded-full"></span>
+                          Premium materials and construction
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="w-1 h-1 bg-primary rounded-full"></span>
+                          Comfortable all-day wear
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="w-1 h-1 bg-primary rounded-full"></span>
+                          Available in multiple colors
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="w-1 h-1 bg-primary rounded-full"></span>
+                          Free shipping and returns
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="flex gap-3">
+                      <Button
+                        className="flex-1 hover:scale-105 transition-transform duration-300"
+                        style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
+                        onClick={() => addToCart(previewProduct)}
+                      >
+                        Add to Cart
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="hover:scale-110 transition-transform duration-300"
+                        onClick={() => addToWishlist(previewProduct)}
+                      >
+                        <Heart className="h-5 w-5" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      )}
+    </>
+  );
+
   // Render different pages based on current page
   if (currentPage === "men") {
     return (
@@ -419,27 +614,7 @@ export default function Index() {
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -452,27 +627,7 @@ export default function Index() {
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -485,27 +640,7 @@ export default function Index() {
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -518,27 +653,7 @@ export default function Index() {
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -550,27 +665,7 @@ export default function Index() {
           onBack={() => setCurrentPage("home")}
           onCategorySelect={(category) => setCurrentPage(category)}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -583,27 +678,7 @@ export default function Index() {
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -616,27 +691,7 @@ export default function Index() {
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -649,27 +704,7 @@ export default function Index() {
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -682,27 +717,7 @@ export default function Index() {
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -714,27 +729,7 @@ export default function Index() {
           onBack={() => setCurrentPage("home")}
           onBrandSelect={handleBrandSelect}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -748,27 +743,7 @@ export default function Index() {
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -781,27 +756,7 @@ export default function Index() {
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -815,27 +770,7 @@ export default function Index() {
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
         />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -844,27 +779,7 @@ export default function Index() {
     return (
       <>
         <Orders onBack={() => setCurrentPage("home")} />
-        <Wishlist
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          items={wishlistItems}
-          onRemoveFromWishlist={removeFromWishlist}
-          onAddToCart={addToCart}
-        />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveFromCart={removeFromCart}
-          onUpdateQuantity={updateCartQuantity}
-          onOrderComplete={() => { setCartItems([]); loadCart(); }}
-        />
-        <Toast
-          message={toast.message}
-          isVisible={toast.isVisible}
-          onClose={() => setToast({ ...toast, isVisible: false })}
-          type={toast.type}
-        />
+        {renderSharedComponents()}
       </>
     );
   }
@@ -1512,200 +1427,7 @@ export default function Index() {
         </div>
       </footer>
 
-
-
-      {/* Wishlist Modal */}
-      <Wishlist
-        isOpen={isWishlistOpen}
-        onClose={() => setIsWishlistOpen(false)}
-        items={wishlistItems}
-        onRemoveFromWishlist={removeFromWishlist}
-        onAddToCart={addToCart}
-      />
-
-      {/* Cart Modal */}
-      <Cart
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        items={cartItems}
-        onRemoveFromCart={removeFromCart}
-        onUpdateQuantity={updateCartQuantity}
-      />
-
-      {/* Toast Notifications */}
-      <Toast
-        message={toast.message}
-        isVisible={toast.isVisible}
-        onClose={() => setToast({ ...toast, isVisible: false })}
-        type={toast.type}
-      />
-
-      {/* Product Preview Modal */}
-      {previewProduct && (
-        <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-2 sm:p-4 overflow-y-auto">
-          <div className="animate-in fade-in-0 zoom-in-95 duration-300 w-full max-w-2xl my-auto">
-            <Card className="border-0 shadow-2xl max-h-none sm:max-h-[90vh] overflow-hidden">
-              <CardContent className="p-0 relative flex flex-col">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => setPreviewProduct(null)}
-                  className="absolute top-4 right-4 z-10 h-8 w-8 bg-background/80 backdrop-blur-sm hover:scale-110 transition-transform duration-300"
-                >
-                  <span className="text-lg">×</span>
-                </Button>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 sm:p-6 overflow-y-auto">
-                  {/* Image Gallery */}
-                  <div className="space-y-4">
-                    <div className="aspect-square bg-gradient-to-br from-muted/50 to-card rounded-xl overflow-hidden">
-                      <img
-                        src={
-                          previewProduct.previewImages?.[currentPreviewImage] ||
-                          previewProduct.image
-                        }
-                        alt={previewProduct.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    {previewProduct.previewImages && (
-                      <div className="flex gap-2 overflow-x-auto">
-                        {previewProduct.previewImages.map(
-                          (img: string, index: number) => (
-                            <button
-                              key={index}
-                              onClick={() => setCurrentPreviewImage(index)}
-                              className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
-                                index === currentPreviewImage
-                                  ? "border-primary scale-105"
-                                  : "border-transparent hover:border-primary/50"
-                              }`}
-                            >
-                              <img
-                                src={img}
-                                alt={`${previewProduct.name} preview ${index + 1}`}
-                                className="w-full h-full object-cover"
-                              />
-                            </button>
-                          ),
-                        )}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Product Details */}
-                  <div className="space-y-6">
-                    <div className="space-y-2">
-                      <p className="text-sm text-muted-foreground font-medium">
-                        {previewProduct.brand}
-                      </p>
-                      <h2 className="text-2xl font-bold">
-                        {previewProduct.name}
-                      </h2>
-                      <div className="flex items-center gap-2">
-                        <div className="flex items-center gap-1">
-                          <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                          <span className="text-sm font-medium">
-                            {previewProduct.rating}
-                          </span>
-                        </div>
-                        <span className="text-sm text-muted-foreground">
-                          ({previewProduct.reviews} reviews)
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3">
-                        <span className="text-3xl font-bold">
-                          ₹{previewProduct.price * 80}
-                        </span>
-                        {previewProduct.originalPrice && (
-                          <span className="text-lg text-muted-foreground line-through">
-                            ₹{previewProduct.originalPrice * 80}
-                          </span>
-                        )}
-                      </div>
-                      <Badge variant="secondary" className="w-fit">
-                        {previewProduct.category}
-                      </Badge>
-                    </div>
-
-                    <div className="space-y-3">
-                      <h4 className="font-semibold">Available Colors</h4>
-                      <div className="flex gap-2">
-                        {previewProduct.colors.map(
-                          (color: string, index: number) => (
-                            <div
-                              key={index}
-                              className={`w-8 h-8 rounded-full border-2 border-white shadow-md cursor-pointer hover:scale-125 transition-transform duration-300 ${
-                                color.toLowerCase() === "red"
-                                  ? "bg-red-500"
-                                  : color.toLowerCase() === "black"
-                                    ? "bg-black"
-                                    : color.toLowerCase() === "white"
-                                      ? "bg-white border-gray-300"
-                                      : color.toLowerCase() === "blue"
-                                        ? "bg-blue-500"
-                                        : color.toLowerCase() === "gray"
-                                          ? "bg-gray-500"
-                                          : color.toLowerCase() === "orange"
-                                            ? "bg-orange-500"
-                                            : "bg-gray-300"
-                              }`}
-                              title={color}
-                            />
-                          ),
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="space-y-3">
-                      <h4 className="font-semibold">Product Features</h4>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li className="flex items-center gap-2">
-                          <span className="w-1 h-1 bg-primary rounded-full"></span>
-                          Premium materials and construction
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <span className="w-1 h-1 bg-primary rounded-full"></span>
-                          Comfortable all-day wear
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <span className="w-1 h-1 bg-primary rounded-full"></span>
-                          Available in multiple colors
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <span className="w-1 h-1 bg-primary rounded-full"></span>
-                          Free shipping and returns
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="flex gap-3">
-                      <Button
-                        className="flex-1 hover:scale-105 transition-transform duration-300"
-                        style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
-                        onClick={() => addToCart(previewProduct)}
-                      >
-                        Add to Cart
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="hover:scale-110 transition-transform duration-300"
-                        onClick={() => addToWishlist(previewProduct)}
-                      >
-                        <Heart className="h-5 w-5" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      )}
+      {renderSharedComponents()}
     </div>
   );
 }
