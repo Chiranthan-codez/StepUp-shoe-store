@@ -119,24 +119,23 @@ export default function Training({
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/30 dark:to-red-900/30 py-16">
+      <div className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/30 dark:to-red-900/30 py-8 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="ghost"
             onClick={onBack}
-            className="mb-6 hover:scale-105 transition-transform duration-300"
+            className="mb-4 sm:mb-6 hover:scale-105 transition-transform duration-300"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Categories
           </Button>
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-5xl">💪</span>
-            <h1 className="text-4xl lg:text-5xl font-bold">Training Shoes</h1>
+            <span className="text-3xl sm:text-5xl">💪</span>
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold">Training Shoes</h1>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            High-performance training shoes built for intense workouts, gym
-            sessions, and cross-training. Maximum stability and support for all
-            your fitness goals.
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl font-sans">
+            Dominate your workouts with shoes built for stability and traction.
+            From the gym to the track, perform at your best.
           </p>
         </div>
       </div>

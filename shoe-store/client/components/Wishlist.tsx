@@ -21,9 +21,9 @@ export default function Wishlist({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="animate-in fade-in-0 zoom-in-95 duration-300 w-full max-w-4xl max-h-[90vh] overflow-hidden">
-        <Card className="border-0 shadow-2xl">
+    <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-2 sm:p-4 overflow-y-auto">
+      <div className="animate-in fade-in-0 zoom-in-95 duration-300 w-full max-w-4xl my-auto">
+        <Card className="border-0 shadow-2xl max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col">
           <div className="flex items-center justify-between p-6 border-b">
             <div className="flex items-center gap-3">
               <h2 className="text-2xl font-bold">My Wishlist</h2>
@@ -41,7 +41,7 @@ export default function Wishlist({
             </Button>
           </div>
 
-          <CardContent className="p-6 max-h-[70vh] overflow-y-auto">
+          <CardContent className="p-4 sm:p-6 flex-1 overflow-y-auto min-h-0">
             {items.length === 0 ? (
               <div className="text-center py-16">
                 <div className="w-24 h-24 mx-auto mb-6 bg-muted rounded-full flex items-center justify-center">

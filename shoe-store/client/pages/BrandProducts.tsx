@@ -1173,22 +1173,22 @@ export default function BrandProducts({
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/30 dark:to-orange-900/30 py-16">
+      <div className="bg-gradient-to-r from-primary/10 to-brand-100/20 py-8 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="ghost"
             onClick={onBack}
-            className="mb-6 hover:scale-105 transition-transform duration-300"
+            className="mb-4 sm:mb-6 hover:scale-105 transition-transform duration-300"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Brands
+            Back to Home
           </Button>
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 uppercase">
             {brandDisplayName} Collection
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            Discover the complete {brandDisplayName} collection. Premium quality
-            and innovative design in every pair.
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl font-sans">
+            Explore the latest and greatest from {brandDisplayName}. Premium footwear
+            selected for quality and style.
           </p>
         </div>
       </div>

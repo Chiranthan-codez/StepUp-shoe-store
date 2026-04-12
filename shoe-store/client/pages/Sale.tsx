@@ -119,23 +119,23 @@ export default function Sale({
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/30 dark:to-orange-900/30 py-16">
+      <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/30 dark:to-orange-900/30 py-8 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="ghost"
             onClick={onBack}
-            className="mb-6 hover:scale-105 transition-transform duration-300"
+            className="mb-4 sm:mb-6 hover:scale-105 transition-transform duration-300"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Button>
-          <div className="flex items-center gap-4 mb-4">
-            <h1 className="text-4xl lg:text-5xl font-bold">Sale Collection</h1>
-            <Badge className="bg-red-500 text-white text-lg px-4 py-2 animate-pulse">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold">Sale Collection</h1>
+            <Badge className="bg-red-500 text-white text-sm sm:text-lg px-3 py-1 sm:px-4 sm:py-2 animate-pulse">
               Up to 45% OFF
             </Badge>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl font-sans">
             Don't miss out on these incredible deals! Limited time offers on
             premium footwear from top brands.
           </p>

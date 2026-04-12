@@ -125,20 +125,20 @@ export default function Women({
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-pink-50 to-red-50 dark:from-pink-900/30 dark:to-red-900/30 py-16">
+      <div className="bg-gradient-to-r from-pink-50 to-red-50 dark:from-pink-900/30 dark:to-red-900/30 py-8 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="ghost"
             onClick={onBack}
-            className="mb-6 hover:scale-105 transition-transform duration-300"
+            className="mb-4 sm:mb-6 hover:scale-105 transition-transform duration-300"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Button>
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Women's Collection
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl font-sans">
             Elegant and comfortable footwear for the modern woman. From
             professional elegance to athletic performance.
           </p>

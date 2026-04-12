@@ -1087,7 +1087,7 @@ export default function Index() {
           
           {/* Left Text Side */}
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-20">
-            <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] leading-[1.05] font-black text-black dark:text-white transition-colors duration-300">
+            <h1 className="text-4xl sm:text-6xl md:text-[5.5rem] leading-[1.05] font-black text-black dark:text-white transition-colors duration-300">
               Best In Style<br />
               Collection<br />
               For You
@@ -1126,7 +1126,7 @@ export default function Index() {
             <img
               src="https://www.pngall.com/wp-content/uploads/2016/04/Running-Shoes-Transparent.png"
               alt="Premium Running Shoe"
-              className="relative z-10 w-[110%] max-w-[600px] object-contain drop-shadow-[0_45px_30px_rgba(0,0,0,0.4)] dark:drop-shadow-[0_45px_30px_rgba(255,255,255,0.05)] transform -rotate-[25deg] hover:rotate-[0deg] hover:scale-105 transition-all duration-700 ease-out cursor-pointer"
+              className="relative z-10 w-[95%] sm:w-[110%] max-w-[600px] object-contain drop-shadow-[0_45px_30px_rgba(0,0,0,0.4)] dark:drop-shadow-[0_45px_30px_rgba(255,255,255,0.05)] transform -rotate-[25deg] hover:rotate-[0deg] hover:scale-105 transition-all duration-700 ease-out cursor-pointer"
               onClick={() => setCurrentPage("categories")}
             />
             
@@ -1542,10 +1542,10 @@ export default function Index() {
 
       {/* Product Preview Modal */}
       {previewProduct && (
-        <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="animate-in fade-in-0 zoom-in-95 duration-300">
-            <Card className="w-full max-w-2xl mx-auto border-0 shadow-2xl">
-              <CardContent className="p-0 relative">
+        <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-2 sm:p-4 overflow-y-auto">
+          <div className="animate-in fade-in-0 zoom-in-95 duration-300 w-full max-w-2xl my-auto">
+            <Card className="border-0 shadow-2xl max-h-none sm:max-h-[90vh] overflow-hidden">
+              <CardContent className="p-0 relative flex flex-col">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -1555,7 +1555,7 @@ export default function Index() {
                   <span className="text-lg">×</span>
                 </Button>
 
-                <div className="grid md:grid-cols-2 gap-6 p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 sm:p-6 overflow-y-auto">
                   {/* Image Gallery */}
                   <div className="space-y-4">
                     <div className="aspect-square bg-gradient-to-br from-muted/50 to-card rounded-xl overflow-hidden">

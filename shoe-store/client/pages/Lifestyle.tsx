@@ -119,24 +119,23 @@ export default function Lifestyle({
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/30 dark:to-pink-900/30 py-16">
+      <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 py-8 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="ghost"
             onClick={onBack}
-            className="mb-6 hover:scale-105 transition-transform duration-300"
+            className="mb-4 sm:mb-6 hover:scale-105 transition-transform duration-300"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Categories
           </Button>
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-5xl">✨</span>
-            <h1 className="text-4xl lg:text-5xl font-bold">Lifestyle Shoes</h1>
+            <span className="text-3xl sm:text-5xl">✨</span>
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold">Lifestyle Shoes</h1>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            Fashion-forward lifestyle shoes that blend style with comfort.
-            Perfect for casual outings, social events, and making a statement
-            wherever you go.
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl font-sans">
+            Express your unique style with our fashion-forward lifestyle
+            collection. Premium designs for modern living.
           </p>
         </div>
       </div>

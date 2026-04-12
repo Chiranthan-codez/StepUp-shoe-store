@@ -175,8 +175,8 @@ export default function Cart({
   if (orderComplete && orderData) {
     const methodInfo = paymentMethods.find((m) => m.id === orderData.paymentMethod);
     return (
-      <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div className="animate-in fade-in-0 zoom-in-95 duration-300 w-full max-w-lg max-h-[90vh] overflow-auto">
+      <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-2 sm:p-4 overflow-y-auto">
+        <div className="animate-in fade-in-0 zoom-in-95 duration-300 w-full max-w-lg my-auto">
           <Card className="border-0 shadow-2xl">
             <div
               className="p-8 text-center"
@@ -355,9 +355,9 @@ export default function Cart({
   // ─── PAYMENT METHOD SELECTION ───
   if (showPaymentOptions) {
     return (
-      <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div className="animate-in fade-in-0 slide-in-from-bottom-5 duration-300 w-full max-w-md max-h-[90vh] overflow-hidden">
-          <Card className="border-0 shadow-2xl">
+      <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-2 sm:p-4 overflow-y-auto">
+        <div className="animate-in fade-in-0 slide-in-from-bottom-5 duration-300 w-full max-w-md my-auto">
+          <Card className="border-0 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
             <div className="flex items-center justify-between p-6 border-b">
               <div>
                 <h2 className="text-xl font-bold">Choose Payment Method</h2>
@@ -375,7 +375,7 @@ export default function Cart({
               </Button>
             </div>
 
-            <CardContent className="p-4 space-y-2">
+            <CardContent className="p-4 space-y-2 overflow-y-auto">
               {paymentMethods.map((method) => {
                 const Icon = method.icon;
                 return (
@@ -429,9 +429,9 @@ export default function Cart({
 
   // ─── MAIN CART VIEW ───
   return (
-    <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="animate-in fade-in-0 slide-in-from-right-5 duration-300 w-full max-w-2xl max-h-[90vh] overflow-hidden">
-        <Card className="border-0 shadow-2xl">
+    <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-2 sm:p-4 overflow-y-auto">
+      <div className="animate-in fade-in-0 slide-in-from-right-5 duration-300 w-full max-w-2xl my-auto">
+        <Card className="border-0 shadow-2xl max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col">
           <div className="flex items-center justify-between p-6 border-b">
             <div className="flex items-center gap-3">
               <div
@@ -459,7 +459,7 @@ export default function Cart({
             </Button>
           </div>
 
-          <CardContent className="p-0 max-h-[50vh] overflow-y-auto">
+          <CardContent className="p-0 flex-1 overflow-y-auto min-h-0">
             {items.length === 0 ? (
               <div className="text-center py-16 px-6">
                 <div className="w-24 h-24 mx-auto mb-6 bg-muted rounded-full flex items-center justify-center">

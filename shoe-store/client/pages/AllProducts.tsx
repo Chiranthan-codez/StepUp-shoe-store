@@ -254,18 +254,18 @@ export default function AllProducts({
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-primary/10 to-brand-100/20 py-16">
+      <div className="bg-gradient-to-r from-primary/10 to-brand-100/20 py-8 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="ghost"
             onClick={onBack}
-            className="mb-6 hover:scale-105 transition-transform duration-300"
+            className="mb-4 sm:mb-6 hover:scale-105 transition-transform duration-300"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Button>
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">All Products</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4">All Products</h1>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl font-sans">
             Browse our complete collection of premium footwear. Find the perfect
             shoes for every occasion and style.
           </p>
@@ -276,8 +276,8 @@ export default function AllProducts({
       <section className="py-8 border-b">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-            <div className="flex flex-wrap gap-2">
-              <span className="text-sm font-medium text-muted-foreground mr-2">
+            <div className="flex flex-wrap gap-2 overflow-x-auto pb-2 sm:pb-0">
+              <span className="text-sm font-medium text-muted-foreground mr-2 self-center">
                 Filter:
               </span>
               {categories.map((category) => (
@@ -286,7 +286,7 @@ export default function AllProducts({
                   variant={filterCategory === category ? "default" : "outline"}
                   size="sm"
                   onClick={() => setFilterCategory(category)}
-                  className="capitalize"
+                  className="capitalize whitespace-nowrap"
                 >
                   {category}
                 </Button>

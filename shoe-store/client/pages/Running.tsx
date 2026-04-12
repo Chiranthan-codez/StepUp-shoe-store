@@ -119,24 +119,23 @@ export default function Running({
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/30 dark:to-green-900/30 py-16">
+      <div className="bg-gradient-to-r from-blue-50 to-teal-50 dark:from-blue-900/30 dark:to-teal-900/30 py-8 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="ghost"
             onClick={onBack}
-            className="mb-6 hover:scale-105 transition-transform duration-300"
+            className="mb-4 sm:mb-6 hover:scale-105 transition-transform duration-300"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Categories
           </Button>
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-5xl">🏃</span>
-            <h1 className="text-4xl lg:text-5xl font-bold">Running Shoes</h1>
+            <span className="text-3xl sm:text-5xl">🏃</span>
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold">Running Shoes</h1>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            High-performance running shoes designed for speed, comfort, and
-            endurance. Perfect for daily training, marathons, and everything in
-            between.
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl font-sans">
+            Push your limits with our performance-driven running footwear.
+            Engineered for speed, comfort, and endurance.
           </p>
         </div>
       </div>

@@ -125,20 +125,20 @@ export default function Men({
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-primary/10 to-brand-100/20 py-16">
+      <div className="bg-gradient-to-r from-primary/10 to-brand-100/20 py-8 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="ghost"
             onClick={onBack}
-            className="mb-6 hover:scale-105 transition-transform duration-300"
+            className="mb-4 sm:mb-6 hover:scale-105 transition-transform duration-300"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Button>
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Men's Collection
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl font-sans">
             Discover our premium collection of men's footwear designed for every
             occasion. From athletic performance to professional style.
           </p>

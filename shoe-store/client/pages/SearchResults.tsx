@@ -255,21 +255,21 @@ export default function SearchResults({
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-primary/10 to-brand-100/20 py-16">
+      <div className="bg-gradient-to-r from-primary/10 to-brand-100/20 py-8 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="ghost"
             onClick={onBack}
-            className="mb-6 hover:scale-105 transition-transform duration-300"
+            className="mb-4 sm:mb-6 hover:scale-105 transition-transform duration-300"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Button>
           <div className="flex items-center gap-4 mb-4">
             <Search className="h-8 w-8 text-primary" />
-            <h1 className="text-4xl lg:text-5xl font-bold">Search Results</h1>
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold">Search Results</h1>
           </div>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground">
             {isValidQuery ? (
               hasResults ? (
                 <>

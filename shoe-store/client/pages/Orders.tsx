@@ -85,22 +85,24 @@ export default function Orders({ onBack }: OrdersProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16 border-b">
+      <div className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/10 dark:to-teal-900/10 py-8 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="ghost"
             onClick={onBack}
-            className="mb-6 hover:scale-105 transition-transform duration-300"
+            className="mb-4 sm:mb-6 hover:scale-105 transition-transform duration-300"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back
+            Back to Home
           </Button>
-          <div className="flex items-center gap-3">
-            <Package className="w-10 h-10 text-primary" />
-            <h1 className="text-4xl lg:text-5xl font-bold">My Orders</h1>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20">
+              <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+            </div>
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold">My Orders</h1>
           </div>
-          <p className="text-lg text-muted-foreground mt-4 max-w-2xl">
-            View your order history and track your latest purchases.
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl font-sans">
+            Track your recent purchases and manage your order history.
           </p>
         </div>
       </div>
