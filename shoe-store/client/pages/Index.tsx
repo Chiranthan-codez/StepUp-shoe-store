@@ -1686,6 +1686,7 @@ export default function Index() {
                       <Button
                         className="flex-1 hover:scale-105 transition-transform duration-300"
                         style={{ backgroundColor: "white", color: "#1a1a2e", border: "2px solid #e5e7eb" }}
+                        onClick={() => addToCart(previewProduct)}
                       >
                         Add to Cart
                       </Button>
@@ -1693,6 +1694,7 @@ export default function Index() {
                         variant="outline"
                         size="icon"
                         className="hover:scale-110 transition-transform duration-300"
+                        onClick={() => addToWishlist(previewProduct)}
                       >
                         <Heart className="h-5 w-5" />
                       </Button>
