@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 const categories = [
   {
     name: "Running",
-    icon: "🏃",
+    //icon: "🏃",
     description: "Performance running shoes for every distance",
     image:
       "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/12d0d09c-26bf-4d4a-9f66-04abb3a17f79/NIKE+AIR+WINFLO+11+WIDE.png",
@@ -14,7 +14,7 @@ const categories = [
   },
   {
     name: "Casual",
-    icon: "👟",
+   // icon: "👟",
     description: "Everyday comfort meets timeless style",
     image:
       "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&h=400&fit=crop&crop=center",
@@ -23,7 +23,7 @@ const categories = [
   },
   {
     name: "Training",
-    icon: "💪",
+    //icon: "💪",
     description: "Built for intense workouts and gym sessions",
     image:
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=400&fit=crop&crop=center",
@@ -32,7 +32,7 @@ const categories = [
   },
   {
     name: "Lifestyle",
-    icon: "✨",
+    //icon: "✨",
     description: "Fashion-forward shoes for modern living",
     image:
       "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&h=400&fit=crop&crop=center",
@@ -91,9 +91,9 @@ export default function Categories({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   <div className="absolute top-6 left-6">
-                    <div className="text-4xl mb-2 group-hover:scale-125 transition-transform duration-300">
+                    {/* <div className="text-4xl mb-2 group-hover:scale-125 transition-transform duration-300">
                       {category.icon}
-                    </div>
+                    </div> */}
                   </div>
                   <div className="absolute bottom-6 left-6 right-6 text-white">
                     <h3 className="text-2xl font-bold mb-2 group-hover:text-primary-foreground transition-colors duration-300">

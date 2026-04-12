@@ -935,7 +935,15 @@ export default function Index() {
             </div>
 
             {/* Actions */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-1 sm:space-x-4">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="lg:hidden hover:scale-110 transition-transform duration-300"
+                onClick={() => setIsMenuOpen(true)}
+              >
+                <Search className="h-5 w-5" />
+              </Button>
               <Button
                 variant="ghost"
                 size="icon"
@@ -999,7 +1007,7 @@ export default function Index() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="hidden sm:flex hover:scale-110 transition-transform duration-300 relative"
+                className="flex hover:scale-110 transition-transform duration-300 relative"
                 onClick={() => setIsWishlistOpen(true)}
               >
                 <Heart className="h-5 w-5" />
@@ -1352,9 +1360,9 @@ export default function Index() {
               </h2>
               <p className="text-lg opacity-90 max-w-2xl mx-auto">
                 Be the first to know about new arrivals, exclusive deals, and
-                style tips.
+                style tips.coz at the end of the day we own the streets
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              {/* <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -1366,7 +1374,7 @@ export default function Index() {
                 >
                   Subscribe
                 </Button>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
         </div>
