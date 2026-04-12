@@ -33,7 +33,35 @@ async function start() {
     console.log(`🚀 Fusion Starter server running on port ${port}`);
     console.log(`📱 Frontend: http://localhost:${port}`);
     console.log(`🔧 API: http://localhost:${port}/api`);
+    
+    // Start keep-alive ping if RENDER_EXTERNAL_URL is set
+    startKeepAlive();
   });
+}
+
+function startKeepAlive() {
+  const url = process.env.RENDER_EXTERNAL_URL;
+  if (!url) {
+    console.log("ℹ️ RENDER_EXTERNAL_URL not set, skipping keep-alive ping.");
+    return;
+  }
+
+  console.log(`⏱️ Starting keep-alive ping for: ${url}`);
+  
+  // Ping every 5 minutes (300,000 ms)
+  setInterval(async () => {
+    try {
+      const pingUrl = `${url}/api/ping`.replace(/([^:]\/)\/+/g, "$1"); // Avoid double slashes
+      const response = await fetch(pingUrl);
+      if (response.ok) {
+        console.log(`✅ Keep-alive ping successful: ${new Date().toISOString()}`);
+      } else {
+        console.error(`❌ Keep-alive ping failed with status ${response.status}: ${new Date().toISOString()}`);
+      }
+    } catch (error) {
+      console.error(`❌ Keep-alive ping error: ${error instanceof Error ? error.message : error}`);
+    }
+  }, 300000);
 }
 
 start();
