@@ -48,7 +48,10 @@ export function authRoutes(passport: any, db: any) {
     passport.authenticate("google", { failureRedirect: `${(process.env.CLIENT_URL || "").replace(/\/$/, "")}/login?login=failed` }),
     (req, res) => {
       const clientUrl = (process.env.CLIENT_URL || "").replace(/\/$/, "");
-      res.redirect(`${clientUrl}/home?login=success`);
+      req.session.save((err) => {
+        if (err) console.error("Session save error:", err);
+        res.redirect(`${clientUrl}/home?login=success`);
+      });
     }
   );
 

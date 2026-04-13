@@ -91,11 +91,13 @@ export function createServer() {
     secret: process.env.SESSION_SECRET || "stepup-secret-key-change-in-production",
     resave: false,
     saveUninitialized: false,
+    proxy: true, // Required for secure cookies behind a proxy
+    rolling: true,
     cookie: {
       secure: isProduction,
       httpOnly: true,
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      sameSite: isProduction ? "lax" : "lax", // 'lax' is safer for proxied same-origin requests
+      sameSite: isProduction ? "none" : "lax", // 'none' + secure is required for cookies set during cross-site redirects in Brave
     },
   }));
 
