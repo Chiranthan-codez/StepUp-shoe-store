@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import session from "express-session";
+import pgSession from "connect-pg-simple";
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { Strategy as LocalStrategy } from "passport-local";
@@ -86,18 +87,26 @@ export function createServer() {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  // Session — with cross-origin cookie support for split deployment
+  const PostgresStore = pgSession(session);
+
+  // Session — with database persistence and cross-origin cookie support
   app.use(session({
+    store: new PostgresStore({
+      pool: pgPool,
+      tableName: "session",
+      createTableIfMissing: true,
+    }),
+    name: "stepup_sid",
     secret: process.env.SESSION_SECRET || "stepup-secret-key-change-in-production",
     resave: false,
     saveUninitialized: false,
-    proxy: true, // Required for secure cookies behind a proxy
+    proxy: true, 
     rolling: true,
     cookie: {
       secure: isProduction,
       httpOnly: true,
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      sameSite: isProduction ? "none" : "lax", // 'none' + secure is required for cookies set during cross-site redirects in Brave
+      sameSite: isProduction ? "none" : "lax", 
     },
   }));
 
