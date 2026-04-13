@@ -37,6 +37,12 @@ const menShoes = [
       "https://i.stpost.com/timberland-6-premium-boots-waterproof-insulated-for-men-in-dark-beige-nubuck~p~ds593_02~1500.2.jpg",
     hoverImage:
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://i.stpost.com/timberland-6-premium-boots-waterproof-insulated-for-men-in-dark-beige-nubuck~p~ds593_02~1500.2.jpg",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.7,
     reviews: 203,
     isNew: false,
@@ -53,6 +59,12 @@ const menShoes = [
       "https://tse3.mm.bing.net/th/id/OIP.CIj6meIJ15QFWLLEnVRxiwHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3&o=7&rm=3",
     hoverImage:
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://tse3.mm.bing.net/th/id/OIP.CIj6meIJ15QFWLLEnVRxiwHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.6,
     reviews: 134,
     isNew: true,
@@ -74,6 +86,11 @@ const menShoes = [
     isNew: false,
     category: "Formal",
     colors: ["Black", "Brown", "Cognac"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 105,
@@ -85,6 +102,12 @@ const menShoes = [
       "https://3.bp.blogspot.com/-_dGgTPvNK7g/UAfEpWd8SII/AAAAAAAAAHM/NzGMM2pVcNo/s1600/pumashoes01.jpg",
     hoverImage:
       "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://3.bp.blogspot.com/-_dGgTPvNK7g/UAfEpWd8SII/AAAAAAAAAHM/NzGMM2pVcNo/s1600/pumashoes01.jpg",
+      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.5,
     reviews: 167,
     isNew: false,
@@ -101,6 +124,12 @@ const menShoes = [
       "https://s7d4.scene7.com/is/image/WolverineWorldWide/MRLW-J035494-062220-F20-000?wid=900&hei=900&resMode=bisharp&op_usm=0.5,1.0,8,0&iccEmbed=0&printRes=72",
     hoverImage:
       "https://images.unsplash.com/photo-1539185441755-769473a23570?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://s7d4.scene7.com/is/image/WolverineWorldWide/MRLW-J035494-062220-F20-000?wid=900&hei=900&resMode=bisharp&op_usm=0.5,1.0,8,0&iccEmbed=0&printRes=72",
+      "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.8,
     reviews: 142,
     isNew: true,

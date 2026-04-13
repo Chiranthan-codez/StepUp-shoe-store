@@ -20,6 +20,12 @@ const allProducts = [
     isNew: true,
     category: "Running",
     colors: ["Blue", "Black", "White"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+    ],
     searchTerms: [
       "air",
       "zoom",
@@ -46,6 +52,12 @@ const allProducts = [
     isNew: false,
     category: "Running",
     colors: ["White", "Black", "Gray"],
+    previewImages: [
+      "https://assets.adidas.com/images/w_600,f_auto,q_auto/06c488fc8b364ff1bdbfe398bb98a406_9366/Y-3_Ultraboost_5_Black_IH0871_01_standard.jpg",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+    ],
     searchTerms: [
       "ultra",
       "boost",
@@ -72,6 +84,12 @@ const allProducts = [
     isNew: false,
     category: "Casual",
     colors: ["White", "Green", "Navy"],
+    previewImages: [
+      "https://tse1.mm.bing.net/th/id/OIP.gsBD7EJbDkR1-AkQ_XCfCQAAAA?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+    ],
     searchTerms: [
       "stan",
       "smith",
@@ -98,6 +116,12 @@ const allProducts = [
     isNew: false,
     category: "Casual",
     colors: ["Black", "White", "Red"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1594489215242-97bd586a343d?w=600&h=600&fit=crop&crop=center",
+    ],
     searchTerms: [
       "chuck",
       "taylor",
@@ -125,6 +149,12 @@ const allProducts = [
     isNew: true,
     category: "Training",
     colors: ["Black", "Orange", "White"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+    ],
     searchTerms: [
       "metcon",
       "8",
@@ -150,6 +180,12 @@ const allProducts = [
     isNew: false,
     category: "Training",
     colors: ["Blue", "Black", "Red"],
+    previewImages: [
+      "https://th.bing.com/th/id/OIP.2nIoFGGFU38_CGLYlUNJoQHaHa?w=600&h=600&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+    ],
     searchTerms: ["nano", "x2", "reebok", "training", "blue", "black", "red"],
   },
   {
@@ -167,6 +203,12 @@ const allProducts = [
     isNew: true,
     category: "Lifestyle",
     colors: ["White", "Black", "Cream"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+    ],
     searchTerms: [
       "blazer",
       "mid",
@@ -193,6 +235,12 @@ const allProducts = [
     isNew: false,
     category: "Lifestyle",
     colors: ["White", "Blue", "Black"],
+    previewImages: [
+      "https://tse3.mm.bing.net/th/id/OIP.vtWKRqDMtnYeKGrzsGCUUwHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1594489215242-97bd586a343d?w=600&h=600&fit=crop&crop=center",
+    ],
     searchTerms: [
       "forum",
       "low",

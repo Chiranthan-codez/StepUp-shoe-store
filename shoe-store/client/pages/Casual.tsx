@@ -20,6 +20,12 @@ const casualShoes = [
     isNew: false,
     category: "Casual",
     colors: ["White", "Green", "Navy"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 602,
@@ -36,6 +42,12 @@ const casualShoes = [
     isNew: false,
     category: "Casual",
     colors: ["Black", "White", "Red"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1594489215242-97bd586a343d?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 603,
@@ -52,6 +64,12 @@ const casualShoes = [
     isNew: true,
     category: "Casual",
     colors: ["White", "Black", "Brown"],
+    previewImages: [
+      "https://tse4.mm.bing.net/th/id/OIP.PaqMuVI00HD9owTWlCgVqQHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 604,
@@ -68,6 +86,12 @@ const casualShoes = [
     isNew: true,
     category: "Casual",
     colors: ["White", "Black", "Gray"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 605,
@@ -84,6 +108,12 @@ const casualShoes = [
     isNew: false,
     category: "Casual",
     colors: ["Blue", "Red", "Black"],
+    previewImages: [
+      "https://cdn.sportsshoes.com/product/P/PUM2450/PUM2450_400_8.jpg",
+      "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 606,
@@ -100,6 +130,12 @@ const casualShoes = [
     isNew: false,
     category: "Casual",
     colors: ["Black", "White", "Checkered"],
+    previewImages: [
+      "https://tse4.mm.bing.net/th/id/OIP.o1GqUftxNDlsA7KLHDMoMQHaIz?pid=ImgDet&w=600&h=800&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&h=600&fit=crop&crop=center",
+    ],
   },
 ];
 

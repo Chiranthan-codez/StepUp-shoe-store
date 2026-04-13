@@ -20,6 +20,12 @@ const trainingShoes = [
     isNew: true,
     category: "Training",
     colors: ["Black", "Orange", "White"],
+    previewImages: [
+      "https://staticg.sportskeeda.com/editor/2024/04/0c58e-17135415029185-1920.jpg?w=600",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 702,
@@ -36,6 +42,12 @@ const trainingShoes = [
     isNew: false,
     category: "Training",
     colors: ["Blue", "Black", "Red"],
+    previewImages: [
+      "https://cdn.mos.cms.futurecdn.net/mBuSEJCZTH5JHJvZypH5Wk-1200-80.jpg",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 703,
@@ -52,6 +64,12 @@ const trainingShoes = [
     isNew: true,
     category: "Training",
     colors: ["Gray", "Black", "Green"],
+    previewImages: [
+      "https://tse1.mm.bing.net/th/id/OIP.wAME1sOQV5SZAkteehL9HAHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 704,
@@ -68,6 +86,12 @@ const trainingShoes = [
     isNew: false,
     category: "Training",
     colors: ["Red", "Black", "White"],
+    previewImages: [
+      "https://tse1.mm.bing.net/th/id/OIP._nRqLAx4fZE1rJuQAYfLrwHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 705,
@@ -84,6 +108,12 @@ const trainingShoes = [
     isNew: false,
     category: "Training",
     colors: ["Yellow", "Black", "Blue"],
+    previewImages: [
+      "https://th.bing.com/th/id/OIP.AWoKA_TKLbC7QGzoKZK_kwHaHa?w=600&h=600&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 706,
@@ -100,6 +130,12 @@ const trainingShoes = [
     isNew: true,
     category: "Training",
     colors: ["Navy", "Gray", "White"],
+    previewImages: [
+      "https://tse1.mm.bing.net/th/id/OIP.Zac3A-1J5HKErVdib156EwHaFI?pid=ImgDet&w=600&h=400&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+    ],
   },
 ];
 

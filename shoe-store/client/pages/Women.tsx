@@ -42,6 +42,12 @@ const womenShoes = [
     isNew: false,
     category: "Formal",
     colors: ["Black", "Nude", "Red"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 203,
@@ -58,6 +64,12 @@ const womenShoes = [
     isNew: true,
     category: "Casual",
     colors: ["White", "Gray", "Pink"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1522016384738-5de5bc184fbe?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 204,
@@ -74,6 +86,12 @@ const womenShoes = [
     isNew: false,
     category: "Training",
     colors: ["Purple", "Black", "Teal"],
+    previewImages: [
+      "https://tse4.mm.bing.net/th/id/OIP.1VrREEymv24b-VRcVrJx9QHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 205,
@@ -90,6 +108,12 @@ const womenShoes = [
     isNew: false,
     category: "Lifestyle",
     colors: ["Chestnut", "Black", "Gray"],
+    previewImages: [
+      "https://th.bing.com/th/id/OIP.OyFLG034e_Mr_pn3xhnQKQHaHu?w=600&h=600&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 206,
@@ -106,6 +130,12 @@ const womenShoes = [
     isNew: true,
     category: "Formal",
     colors: ["Nude", "Black", "Navy"],
+    previewImages: [
+      "https://tse3.mm.bing.net/th/id/OIP.7toGk7xmS0tWWO05d6d4eAHaJ4?pid=ImgDet&w=600&h=800&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+    ],
   },
 ];
 

@@ -20,6 +20,12 @@ const runningShoes = [
     isNew: true,
     category: "Running",
     colors: ["Blue", "Black", "White"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 502,
@@ -36,6 +42,12 @@ const runningShoes = [
     isNew: false,
     category: "Running",
     colors: ["White", "Black", "Gray"],
+    previewImages: [
+      "https://tse3.mm.bing.net/th/id/OIP.2sGFLesZY1_-oe_7zG4dTwHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 503,
@@ -52,6 +64,12 @@ const runningShoes = [
     isNew: true,
     category: "Running",
     colors: ["Orange", "Blue", "Black"],
+    previewImages: [
+      "https://tse4.mm.bing.net/th/id/OIP.4UQxXxpOAJzeWHkKF1m03wHaE7?pid=ImgDet&w=600&h=400&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 504,
@@ -68,6 +86,12 @@ const runningShoes = [
     isNew: false,
     category: "Running",
     colors: ["Gray", "Blue", "White"],
+    previewImages: [
+      "https://th.bing.com/th/id/OIP.SYTgpOUxniWzvvcCEoG-kQHaHa?w=600&h=600&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 505,
@@ -84,6 +108,12 @@ const runningShoes = [
     isNew: true,
     category: "Running",
     colors: ["Black", "Red", "White"],
+    previewImages: [
+      "https://tse4.mm.bing.net/th/id/OIP.tCbIgrrhogROwP0Hatv18QHaEK?pid=ImgDet&w=600&h=300&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 506,
@@ -100,6 +130,12 @@ const runningShoes = [
     isNew: false,
     category: "Running",
     colors: ["Green", "Black", "Yellow"],
+    previewImages: [
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/377758/01/sv01",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+    ],
   },
 ];
 

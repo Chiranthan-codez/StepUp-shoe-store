@@ -42,6 +42,12 @@ const kidsShoes = [
     isNew: false,
     category: "Outdoor",
     colors: ["Green", "Orange", "Navy"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 303,
@@ -58,6 +64,12 @@ const kidsShoes = [
     isNew: true,
     category: "School",
     colors: ["Black", "White", "Red"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 304,
@@ -74,6 +86,12 @@ const kidsShoes = [
     isNew: false,
     category: "Casual",
     colors: ["Pink", "Purple", "Silver"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 305,
@@ -90,6 +108,12 @@ const kidsShoes = [
     isNew: true,
     category: "Sports",
     colors: ["Blue", "Yellow", "White"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 306,
@@ -106,6 +130,12 @@ const kidsShoes = [
     isNew: false,
     category: "Toddler",
     colors: ["Brown", "Pink", "Blue"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&h=600&fit=crop&crop=center",
+    ],
   },
 ];
 

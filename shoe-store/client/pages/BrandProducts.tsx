@@ -21,6 +21,12 @@ const brandProductsData: { [key: string]: any[] } = {
       isNew: true,
       category: "Running",
       colors: ["Red", "Black", "White"],
+      previewImages: [
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+      ],
     },
     {
       id: 1002,
@@ -167,6 +173,12 @@ const brandProductsData: { [key: string]: any[] } = {
       isNew: false,
       category: "Running",
       colors: ["White", "Black", "Gray"],
+      previewImages: [
+        "https://assets.adidas.com/images/w_600,f_auto,q_auto/06c488fc8b364ff1bdbfe398bb98a406_9366/Y-3_Ultraboost_5_Black_IH0871_01_standard.jpg",
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+      ],
     },
     {
       id: 2002,
@@ -281,6 +293,12 @@ const brandProductsData: { [key: string]: any[] } = {
       isNew: false,
       category: "Running",
       colors: ["Green", "Black", "Yellow"],
+      previewImages: [
+        "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/377758/01/sv01",
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+      ],
     },
     {
       id: 3002,
@@ -379,6 +397,12 @@ const brandProductsData: { [key: string]: any[] } = {
       isNew: false,
       category: "Casual",
       colors: ["Black", "White", "Red"],
+      previewImages: [
+        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1594489215242-97bd586a343d?w=600&h=600&fit=crop&crop=center",
+      ],
     },
     {
       id: 4002,
@@ -445,6 +469,12 @@ const brandProductsData: { [key: string]: any[] } = {
       isNew: false,
       category: "Training",
       colors: ["Blue", "Black", "Red"],
+      previewImages: [
+        "https://th.bing.com/th/id/OIP.2nIoFGGFU38_CGLYlUNJoQHaHa?w=600&h=600&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+        "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+      ],
     },
     {
       id: 5002,
@@ -479,6 +509,12 @@ const brandProductsData: { [key: string]: any[] } = {
       isNew: false,
       category: "Running",
       colors: ["Gray", "Blue", "White"],
+      previewImages: [
+        "https://th.bing.com/th/id/OIP.SYTgpOUxniWzvvcCEoG-kQHaHa?w=600&h=600&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+        "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+      ],
     },
     {
       id: 6002,
@@ -577,6 +613,12 @@ const brandProductsData: { [key: string]: any[] } = {
       isNew: false,
       category: "Casual",
       colors: ["Black", "White", "Checkered"],
+      previewImages: [
+        "https://tse4.mm.bing.net/th/id/OIP.o1GqUftxNDlsA7KLHDMoMQHaIz?pid=ImgDet&w=600&h=800&c=7&dpr=1.3&o=7&rm=3",
+        "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&h=600&fit=crop&crop=center",
+      ],
     },
     {
       id: 7002,
@@ -675,6 +717,12 @@ const brandProductsData: { [key: string]: any[] } = {
       isNew: false,
       category: "Training",
       colors: ["Red", "Black", "White"],
+      previewImages: [
+        "https://tse1.mm.bing.net/th/id/OIP._nRqLAx4fZE1rJuQAYfLrwHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+        "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+      ],
     },
     {
       id: 8002,
@@ -773,6 +821,12 @@ const brandProductsData: { [key: string]: any[] } = {
       isNew: true,
       category: "Running",
       colors: ["Orange", "Blue", "Black"],
+      previewImages: [
+        "https://tse1.mm.bing.net/th/id/OIP.4UQxXxpOAJzeWHkKF1m03wHaE7?pid=ImgDet&w=600&h=400&c=7&dpr=1.3&o=7&rm=3",
+        "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      ],
     },
     {
       id: 9002,

@@ -16,6 +16,12 @@ const allProducts = [
       "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?w=400&h=400&fit=crop&crop=center",
     hoverImage:
       "https://images.unsplash.com/photo-1605367794049-84a5d8dde8e7?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1605367794049-84a5d8dde8e7?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.8,
     reviews: 342,
     isNew: true,
@@ -32,6 +38,12 @@ const allProducts = [
       "https://tse4.mm.bing.net/th/id/OIP.HxzmsJV9qwcXi14wU09bmwHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3&o=7&rm=3",
     hoverImage:
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://tse4.mm.bing.net/th/id/OIP.HxzmsJV9qwcXi14wU09bmwHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.7,
     reviews: 287,
     isNew: false,
@@ -49,6 +61,12 @@ const allProducts = [
       "https://tse3.mm.bing.net/th/id/OIP.kDtzx3OYqhnZbhH4mYG3zQHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3&o=7&rm=3",
     hoverImage:
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://tse3.mm.bing.net/th/id/OIP.kDtzx3OYqhnZbhH4mYG3zQHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.6,
     reviews: 456,
     isNew: false,
@@ -65,6 +83,12 @@ const allProducts = [
       "https://tse3.mm.bing.net/th/id/OIP.3r-9GawtSputBLpTSstxwQHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3&o=7&rm=3",
     hoverImage:
       "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://tse3.mm.bing.net/th/id/OIP.3r-9GawtSputBLpTSstxwQHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.4,
     reviews: 623,
     isNew: false,
@@ -82,6 +106,12 @@ const allProducts = [
       "https://tse1.mm.bing.net/th/id/OIP.b4AjHbUCTnjjDiUuSDfWKQHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3&o=7&rm=3",
     hoverImage:
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://tse1.mm.bing.net/th/id/OIP.b4AjHbUCTnjjDiUuSDfWKQHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.7,
     reviews: 298,
     isNew: true,
@@ -98,6 +128,12 @@ const allProducts = [
       "https://th.bing.com/th/id/R.229af8b38f2e7429dbfc196e2d12521f?rik=8g%2ffs6eVQNI%2bWA&riu=http%3a%2f%2freebok.ca%2fcdn%2fshop%2fproducts%2f100074657B0378.jpg%3fv%3d1705976785&ehk=KJqfuGra44rFI3JpnrvZQePWi4r6uaVHLsRarwaSEjw%3d&risl=&pid=ImgRaw&r=0",
     hoverImage:
       "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://th.bing.com/th/id/R.229af8b38f2e7429dbfc196e2d12521f?rik=8g%2ffs6eVQNI%2bWA&riu=http%3a%2f%2freebok.ca%2fcdn%2fshop%2fproducts%2f100074657B0378.jpg%3fv%3d1705976785&ehk=KJqfuGra44rFI3JpnrvZQePWi4r6uaVHLsRarwaSEjw%3d&risl=&pid=ImgRaw&r=0",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.6,
     reviews: 234,
     isNew: false,
@@ -115,6 +151,12 @@ const allProducts = [
       "https://tse2.mm.bing.net/th/id/OIP._n28TLg1WnVCAPT4jSxgZAHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3&o=7&rm=3",
     hoverImage:
       "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://tse2.mm.bing.net/th/id/OIP._n28TLg1WnVCAPT4jSxgZAHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.5,
     reviews: 387,
     isNew: true,
@@ -131,6 +173,12 @@ const allProducts = [
       "https://tse3.mm.bing.net/th/id/OIP.lg1-4flYY5b77SlpRAjWvQHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3&o=7&rm=3",
     hoverImage:
       "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://tse3.mm.bing.net/th/id/OIP.lg1-4flYY5b77SlpRAjWvQHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.4,
     reviews: 234,
     isNew: false,
@@ -148,6 +196,12 @@ const allProducts = [
       "https://tse1.mm.bing.net/th/id/OIP.g1P3kFbnW2Q_Q5xwbbs8pgHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3&o=7&rm=3",
     hoverImage:
       "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://tse1.mm.bing.net/th/id/OIP.g1P3kFbnW2Q_Q5xwbbs8pgHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.8,
     reviews: 156,
     isNew: true,
@@ -164,6 +218,12 @@ const allProducts = [
       "https://tse3.mm.bing.net/th/id/OIP.akJAl5MiwPdy5vCaE3yThAHaFj?pid=ImgDet&w=184&h=138&c=7&dpr=1.3&o=7&rm=3",
     hoverImage:
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://tse3.mm.bing.net/th/id/OIP.akJAl5MiwPdy5vCaE3yThAHaFj?pid=ImgDet&w=600&h=450&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.7,
     reviews: 203,
     isNew: false,
@@ -181,6 +241,12 @@ const allProducts = [
       "https://tse4.mm.bing.net/th/id/OIP.ttKD4tuxUvhO4YJE2h5NuAHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3&o=7&rm=3",
     hoverImage:
       "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://tse4.mm.bing.net/th/id/OIP.ttKD4tuxUvhO4YJE2h5NuAHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.9,
     reviews: 234,
     isNew: true,
@@ -197,6 +263,12 @@ const allProducts = [
       "https://th.bing.com/th/id/OIP.n5ZZpVdvcLztfDvPRkk1oAHaHa?w=216&h=216&c=7&r=0&o=5&dpr=1.3&pid=1.7",
     hoverImage:
       "https://images.unsplash.com/photo-1539185441755-769473a23570?w=400&h=400&fit=crop&crop=center",
+    previewImages: [
+      "https://th.bing.com/th/id/OIP.n5ZZpVdvcLztfDvPRkk1oAHaHa?w=600&h=600&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&h=600&fit=crop&crop=center",
+    ],
     rating: 4.8,
     reviews: 167,
     isNew: false,

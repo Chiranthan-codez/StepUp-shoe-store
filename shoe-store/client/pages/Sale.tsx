@@ -20,6 +20,12 @@ const saleShoes = [
     discount: 40,
     category: "Running",
     colors: ["Red", "Black", "White"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 402,
@@ -36,6 +42,12 @@ const saleShoes = [
     discount: 38,
     category: "Casual",
     colors: ["Blue", "Gray", "White"],
+    previewImages: [
+      "https://tse4.mm.bing.net/th/id/OIP.jAJwd-1KLzyG6w74sWrJwgHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 403,
@@ -52,6 +64,12 @@ const saleShoes = [
     discount: 40,
     category: "Formal",
     colors: ["Black", "Brown", "Cognac"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 404,
@@ -68,6 +86,12 @@ const saleShoes = [
     discount: 40,
     category: "Training",
     colors: ["Black", "Orange", "Blue"],
+    previewImages: [
+      "https://th.bing.com/th/id/OIP.CHlEpKSmBd8LDMVjHZO2GAHaHa?w=600&h=600&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 405,
@@ -84,6 +108,12 @@ const saleShoes = [
     discount: 39,
     category: "Formal",
     colors: ["Black", "Nude", "Red"],
+    previewImages: [
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2f?w=600&h=600&fit=crop&crop=center",
+    ],
   },
   {
     id: 406,
@@ -100,6 +130,12 @@ const saleShoes = [
     discount: 45,
     category: "Lifestyle",
     colors: ["Black", "White", "Red"],
+    previewImages: [
+      "https://tse1.mm.bing.net/th/id/OIP.x_4G_kvXstPm2LwgXD7_IQHaHa?pid=ImgDet&w=600&h=600&c=7&dpr=1.3&o=7&rm=3",
+      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?w=600&h=600&fit=crop&crop=center",
+    ],
   },
 ];
 
