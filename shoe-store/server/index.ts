@@ -66,8 +66,8 @@ export function createServer() {
   // Make db available to routes
   app.locals.db = db;
 
-  // Trust proxy (Railway runs behind a proxy)
-  app.set("trust proxy", 1);
+  // Trust proxy (Required for multiple layers: Netlify -> Render Load Balancer)
+  app.set("trust proxy", true);
 
   // Middleware
   const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:8080").split(",").map(s => s.trim());
