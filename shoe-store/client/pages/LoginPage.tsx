@@ -75,9 +75,7 @@ export default function LoginPage() {
     }
   };
 
-  const handleGoogleLogin = () => {
-    window.location.href = apiUrl("/api/auth/google");
-  };
+
 
   // Floating shoe particles
   const particles = Array.from({ length: 6 }, (_, i) => i);
@@ -223,23 +221,21 @@ export default function LoginPage() {
 
           <CardContent className="space-y-5 pb-6">
             {/* Google OAuth Button */}
-            <Button
-              type="button"
-              variant="outline"
-              className="w-full h-12 font-medium group relative overflow-hidden transition-all duration-300"
+            <a
+              href={apiUrl("/api/auth/google")}
+              className="w-full h-12 font-medium group relative overflow-hidden transition-all duration-300 flex items-center justify-center rounded-md"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.12)",
                 color: "white",
               }}
-              onClick={handleGoogleLogin}
               onMouseEnter={(e) => {
-                (e.target as HTMLElement).style.borderColor = "rgba(208, 2, 27, 0.5)";
-                (e.target as HTMLElement).style.background = "rgba(208, 2, 27, 0.08)";
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(208, 2, 27, 0.5)";
+                (e.currentTarget as HTMLElement).style.background = "rgba(208, 2, 27, 0.08)";
               }}
               onMouseLeave={(e) => {
-                (e.target as HTMLElement).style.borderColor = "rgba(255,255,255,0.12)";
-                (e.target as HTMLElement).style.background = "rgba(255,255,255,0.05)";
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.12)";
+                (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.05)";
               }}
             >
               <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24">
@@ -261,7 +257,7 @@ export default function LoginPage() {
                 />
               </svg>
               Continue with Google
-            </Button>
+            </a>
 
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
