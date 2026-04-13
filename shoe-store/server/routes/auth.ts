@@ -57,5 +57,25 @@ export function authRoutes(passport: any, db: any) {
     req.logout(() => res.json({ message: "Logged out" }));
   });
 
+  // Update Profile
+  router.put("/profile", async (req, res) => {
+    if (!req.isAuthenticated()) return res.status(401).json({ error: "Not authenticated" });
+    const { name, email } = req.body;
+    const user: any = req.user;
+
+    try {
+      if (email && email !== user.email) {
+        const [existing]: any = await db.query("SELECT id FROM users WHERE email = ? AND id != ?", [email, user.id]);
+        if (existing.length > 0) return res.status(409).json({ error: "Email already in use" });
+      }
+
+      await db.query("UPDATE users SET name = ?, email = ? WHERE id = ?", [name || user.name, email || user.email, user.id]);
+      const [rows]: any = await db.query("SELECT id, name, email, avatar FROM users WHERE id = ?", [user.id]);
+      res.json({ user: rows[0] });
+    } catch (err) {
+      res.status(500).json({ error: "Profile update failed" });
+    }
+  });
+
   return router;
 }

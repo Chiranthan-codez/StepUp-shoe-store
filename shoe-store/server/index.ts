@@ -11,6 +11,7 @@ import { authRoutes } from "./routes/auth";
 import { cartRoutes } from "./routes/cart";
 import { wishlistRoutes } from "./routes/wishlist";
 import { orderRoutes } from "./routes/orders";
+import { addressRoutes } from "./routes/addresses";
 
 export function createServer() {
   const app = express();
@@ -155,6 +156,27 @@ export function createServer() {
   app.use("/api/cart", cartRoutes(db));
   app.use("/api/wishlist", wishlistRoutes(db));
   app.use("/api/orders", orderRoutes(db));
+  app.use("/api/addresses", addressRoutes(db));
+
+  // Initialize DB tables if missing
+  (async () => {
+    try {
+      await db.query(`
+        CREATE TABLE IF NOT EXISTS addresses (
+          id SERIAL PRIMARY KEY,
+          user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+          label VARCHAR(50) DEFAULT 'Home',
+          address TEXT NOT NULL,
+          city VARCHAR(100) NOT NULL,
+          is_default BOOLEAN DEFAULT false,
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+      `);
+      console.log("DB Initialization complete: addresses table ready");
+    } catch (err) {
+      console.error("DB Initialization error:", err);
+    }
+  })();
 
   // Check current user
   app.get("/api/me", (req, res) => {

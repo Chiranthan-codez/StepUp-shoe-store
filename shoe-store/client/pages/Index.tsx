@@ -410,6 +410,11 @@ export default function Index() {
     setCurrentPage("brandproducts");
   };
 
+  const handlePreviewProduct = (product: any) => {
+    setPreviewProduct(product);
+    setCurrentPreviewImage(0);
+  };
+
   // Shared components helper
   const renderSharedComponents = () => (
     <>
@@ -613,6 +618,7 @@ export default function Index() {
           onBack={() => setCurrentPage("home")}
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
+          onPreview={handlePreviewProduct}
         />
         {renderSharedComponents()}
       </>
@@ -626,6 +632,7 @@ export default function Index() {
           onBack={() => setCurrentPage("home")}
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
+          onPreview={handlePreviewProduct}
         />
         {renderSharedComponents()}
       </>
@@ -639,6 +646,7 @@ export default function Index() {
           onBack={() => setCurrentPage("home")}
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
+          onPreview={handlePreviewProduct}
         />
         {renderSharedComponents()}
       </>
@@ -652,6 +660,7 @@ export default function Index() {
           onBack={() => setCurrentPage("home")}
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
+          onPreview={handlePreviewProduct}
         />
         {renderSharedComponents()}
       </>
@@ -677,6 +686,7 @@ export default function Index() {
           onBack={() => setCurrentPage("categories")}
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
+          onPreview={handlePreviewProduct}
         />
         {renderSharedComponents()}
       </>
@@ -690,6 +700,7 @@ export default function Index() {
           onBack={() => setCurrentPage("categories")}
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
+          onPreview={handlePreviewProduct}
         />
         {renderSharedComponents()}
       </>
@@ -703,6 +714,7 @@ export default function Index() {
           onBack={() => setCurrentPage("categories")}
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
+          onPreview={handlePreviewProduct}
         />
         {renderSharedComponents()}
       </>
@@ -716,6 +728,7 @@ export default function Index() {
           onBack={() => setCurrentPage("categories")}
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
+          onPreview={handlePreviewProduct}
         />
         {renderSharedComponents()}
       </>
@@ -742,6 +755,7 @@ export default function Index() {
           onBack={() => setCurrentPage("brands")}
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
+          onPreview={handlePreviewProduct}
         />
         {renderSharedComponents()}
       </>
@@ -755,6 +769,7 @@ export default function Index() {
           onBack={() => setCurrentPage("home")}
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
+          onPreview={handlePreviewProduct}
         />
         {renderSharedComponents()}
       </>
@@ -769,6 +784,7 @@ export default function Index() {
           onBack={() => setCurrentPage("home")}
           onAddToWishlist={addToWishlist}
           onAddToCart={addToCart}
+          onPreview={handlePreviewProduct}
         />
         {renderSharedComponents()}
       </>
@@ -1161,9 +1177,9 @@ export default function Index() {
                       variant="secondary"
                       size="icon"
                       className="w-8 h-8 hover:scale-110 transition-transform duration-300"
-                      onClick={() => {
-                        setPreviewProduct(product);
-                        setCurrentPreviewImage(0);
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handlePreviewProduct(product);
                       }}
                     >
                       <Eye className="h-4 w-4" />

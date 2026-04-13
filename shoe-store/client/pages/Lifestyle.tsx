@@ -107,12 +107,14 @@ interface LifestyleProps {
   onBack: () => void;
   onAddToWishlist: (product: any) => void;
   onAddToCart: (product: any) => void;
+  onPreview: (product: any) => void;
 }
 
 export default function Lifestyle({
   onBack,
   onAddToWishlist,
   onAddToCart,
+  onPreview,
 }: LifestyleProps) {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
 
@@ -178,6 +180,10 @@ export default function Lifestyle({
                       variant="secondary"
                       size="icon"
                       className="w-8 h-8 hover:scale-110 transition-transform duration-300"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onPreview(product);
+                      }}
                     >
                       <Eye className="h-4 w-4" />
                     </Button>
