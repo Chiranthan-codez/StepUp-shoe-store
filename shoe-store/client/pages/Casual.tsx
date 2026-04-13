@@ -185,7 +185,7 @@ export default function Casual({
                       }}
                     >
                       <Eye className="h-4 w-4" />
-                    </Button
+                    </Button>
                   </div>
                   {product.originalPrice && (
                     <Badge
